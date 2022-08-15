@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1d3 20150301//EN" "http://jats.nlm.nih.gov/publishing/1.1d3/JATS-journalpublishing1.dtd">
+<article article-type="other" dtd-version="1.1d3" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">PLoS Biol</journal-id>
+<journal-id journal-id-type="publisher-id">plos</journal-id>
+<journal-id journal-id-type="pmc">plosbiol</journal-id>
+<journal-title-group>
+<journal-title>PLOS Biology</journal-title>
+</journal-title-group>
+<issn pub-type="ppub">1544-9173</issn>
+<issn pub-type="epub">1545-7885</issn>
+<publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, CA USA</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1371/journal.pbio.2006760</article-id>
+<article-id pub-id-type="publisher-id">pbio.2006760</article-id>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Community Page</subject>
+</subj-group>
+<subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Cell biology</subject><subj-group><subject>Cellular types</subject><subj-group><subject>Animal cells</subject><subj-group><subject>Neurons</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Neuroscience</subject><subj-group><subject>Cellular neuroscience</subject><subj-group><subject>Neurons</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Membrane potential</subject><subj-group><subject>Action potentials</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Membrane potential</subject><subj-group><subject>Action potentials</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Neurophysiology</subject><subj-group><subject>Action potentials</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Neurophysiology</subject><subj-group><subject>Action potentials</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Neuroscience</subject><subj-group><subject>Neurophysiology</subject><subj-group><subject>Action potentials</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Neuroscience</subject></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Computational biology</subject><subj-group><subject>Computational neuroscience</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Neuroscience</subject><subj-group><subject>Computational neuroscience</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Engineering and technology</subject><subj-group><subject>Electronics</subject><subj-group><subject>Diodes</subject><subj-group><subject>Light emitting diodes</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Membrane potential</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Electrophysiology</subject><subj-group><subject>Membrane potential</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Engineering and technology</subject><subj-group><subject>Electronics</subject><subj-group><subject>Diodes</subject><subj-group><subject>Photodiodes</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Engineering and technology</subject><subj-group><subject>Electronics</subject><subj-group><subject>Oscilloscopes</subject></subj-group></subj-group></subj-group></article-categories>
+<title-group>
+<article-title>Spikeling: A low-cost hardware implementation of a spiking neuron for neuroscience teaching and outreach</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">http://orcid.org/0000-0003-2808-4210</contrib-id>
+<name name-style="western">
+<surname>Baden</surname>
+<given-names>Tom</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+<xref ref-type="aff" rid="aff002"><sup>2</sup></xref>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+<xref ref-type="corresp" rid="cor001">*</xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>James</surname>
+<given-names>Ben</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Zimmermann</surname>
+<given-names>Maxime J. Y.</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Bartel</surname>
+<given-names>Phillip</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Grijseels</surname>
+<given-names>Dorieke</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Euler</surname>
+<given-names>Thomas</given-names>
+</name>
+<xref ref-type="aff" rid="aff002"><sup>2</sup></xref>
+<xref ref-type="aff" rid="aff005"><sup>5</sup></xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes" xlink:type="simple">
+<name name-style="western">
+<surname>Lagnado</surname>
+<given-names>Leon</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes" xlink:type="simple">
+<name name-style="western">
+<surname>Maravall</surname>
+<given-names>Miguel</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+</contrib-group>
+<aff id="aff001"><label>1</label> <addr-line>School of Life Sciences, University of Sussex, Brighton, United Kingdom</addr-line></aff>
+<aff id="aff002"><label>2</label> <addr-line>Institute for Ophthalmic Research, University of Tuebingen, Tuebingen, Germany</addr-line></aff>
+<aff id="aff003"><label>3</label> <addr-line>TReND in Africa gUG, Brighton, United Kingdom</addr-line></aff>
+<aff id="aff004"><label>4</label> <addr-line>School of Psychology, University of Sussex, Brighton, United Kingdom</addr-line></aff>
+<aff id="aff005"><label>5</label> <addr-line>Center for Integrative Neuroscience, University of Tuebingen, Tuebingen, Germany</addr-line></aff>
+<author-notes>
+<fn fn-type="conflict" id="coi001">
+<p>The authors have declared that no competing interests exist.</p>
+</fn>
+<corresp id="cor001">* E-mail: <email xlink:type="simple">t.baden@sussex.ac.uk</email></corresp>
+</author-notes>
+<pub-date pub-type="epub">
+<day>26</day>
+<month>10</month>
+<year>2018</year>
+</pub-date>
+<pub-date pub-type="collection">
+<month>10</month>
+<year>2018</year>
+</pub-date>
+<volume>16</volume>
+<issue>10</issue>
+<elocation-id>e2006760</elocation-id>
+<permissions>
+<copyright-year>2018</copyright-year>
+<copyright-holder>Baden et al</copyright-holder>
+<license xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="info:doi/10.1371/journal.pbio.2006760"/>
+<abstract>
+<p>Understanding how neurons encode and compute information is fundamental to our study of the brain, but opportunities for hands-on experience with neurophysiological techniques on live neurons are scarce in science education. Here, we present Spikeling, an open source in silico implementation of a spiking neuron that costs £25 and mimics a wide range of neuronal behaviours for classroom education and public neuroscience outreach. Spikeling is based on an Arduino microcontroller running the computationally efficient Izhikevich model of a spiking neuron. The microcontroller is connected to input ports that simulate synaptic excitation or inhibition, to dials controlling current injection and noise levels, to a photodiode that makes Spikeling light sensitive, and to a light-emitting diode (LED) and speaker that allows spikes to be seen and heard. Output ports provide access to variables such as membrane potential for recording in experiments or digital signals that can be used to excite other connected Spikelings. These features allow for the intuitive exploration of the function of neurons and networks mimicking electrophysiological experiments. We also report our experience of using Spikeling as a teaching tool for undergraduate and graduate neuroscience education in Nigeria and the United Kingdom.</p>
+</abstract>
+<funding-group>
+<funding-statement>European research Council (grant number 677687). The funder had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. Marie Sklodowska - Curie European Training network “Switchboard” (grant number 674901). The funder had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. Deutsche Forschungsgemeinschaft (grant number BA 5283/1 - 1). The funder had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. Medical Research Council (grant number MC_PC_15071). The funder had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. Leverhulme Trust (grant number PLP_AAF_ 20171024). The funder had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+</funding-group>
+<counts>
+<fig-count count="7"/>
+<table-count count="0"/>
+<page-count count="16"/>
+</counts>
+<custom-meta-group>
+<custom-meta>
+<meta-name>PLOS Publication Stage</meta-name>
+<meta-value>vor-update-to-uncorrected-proof</meta-value>
+</custom-meta>
+<custom-meta>
+<meta-name>Publication Update</meta-name>
+<meta-value>2018-11-07</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<disp-quote>
+<p>This Community Page is part of the Cool Tools Series.</p>
+</disp-quote>
+<sec id="sec001" sec-type="intro">
+<title>Introduction</title>
+<p>Neuroscience is a major arm of modern life sciences. The first neuroscience degrees were awarded by the University of Sussex in 1972, and many universities worldwide are now offering dedicated neuroscience undergraduate degrees [<xref ref-type="bibr" rid="pbio.2006760.ref001">1</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref002">2</xref>]. A fundamental aspect of these courses is understanding electrical signalling within neurons and the transmission of signals across synapses [<xref ref-type="bibr" rid="pbio.2006760.ref003">3</xref>] as well as the experimental techniques necessary to observe these properties [<xref ref-type="bibr" rid="pbio.2006760.ref004">4</xref>]. However, owing to budgetary constraints and logistical hurdles, few students can be afforded the opportunity to experience an electrophysiological recording of a living neuron in action, e.g., during an experimental class. Similarly, public understanding about the fundamentals of brain function is hampered by the lack of cheap, approachable, and easy-to-use tools for neuroscience outreach aimed at illuminating how the basic machines of the brain, neurons, and synapses operate to represent information [<xref ref-type="bibr" rid="pbio.2006760.ref005">5</xref>]. The growing public interest in areas such as artificial intelligence and the effects of neurodegeneration on an aging population make it more pressing than ever to foster public awareness and interest in basic concepts in neuroscience [<xref ref-type="bibr" rid="pbio.2006760.ref006">6</xref>].</p>
+<p>To support university-level neuroscience teaching and public understanding of neurons, we designed ‘Spikeling’ (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1A</xref>), a £25 electronic circuit that mimics the electrical properties of spiking neurons by running the computationally efficient yet versatile Izhikevich model [<xref ref-type="bibr" rid="pbio.2006760.ref007">7</xref>] in real time. Depending on settings, Spikeling executes at approximately 420–1,000 Hz, which is particularly appropriate to mimic ‘slow’ neurons of many invertebrates but about an order of magnitude slower than the fastest cortical neurons of mammals. The circuit is built around an Arduino [<xref ref-type="bibr" rid="pbio.2006760.ref008">8</xref>], an open source programmable microcontroller that has found widespread use in the teaching of engineering and the design and implementation of open source laboratory hardware [<xref ref-type="bibr" rid="pbio.2006760.ref009">9</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref010">10</xref>].</p>
+<fig id="pbio.2006760.g001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g001</object-id>
+<label>Fig 1</label>
+<caption>
+<title>Basic hardware and software.</title>
+<p>A. Fully assembled Spikeling board. B. Screenshots of the Serial Oscilloscope software used, displaying Spikeling activity of the network in (C). C. Three Spikelings connected into a simple network.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g001" xlink:type="simple"/>
+</fig>
+<p>Following the footsteps of Mahowald’s and Douglas’ 1991 first complete in silico realisation of a spiking neuron [<xref ref-type="bibr" rid="pbio.2006760.ref011">11</xref>], Spikeling presents a simple yet powerful model of an excitable neuron with multiple dials and input/output options to play with. It is designed to facilitate a hands-on and intuitive approach to exploring the biophysics of neurons, their operation within neuronal networks, and the strategies by which they encode and process information. Spikeling can be excited and its activity recorded so as to design a variety of classical experiments similar to those that might be carried out on a biological neuron, which students learn about in textbooks [<xref ref-type="bibr" rid="pbio.2006760.ref012">12</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref013">13</xref>]. Here, we present a series of basic neuronal processes that are efficiently modelled using Spikeling, followed by an evaluation of our experience using the device for teaching senior undergraduate and Master’s students in the UK and a graduate neuroscience summer school held in Nigeria. Spikeling should be a useful tool in educating students of neuroscience and psychology as well as students of engineering and computer science who are interested in the biophysics of neurons and brain function.</p>
+<sec id="sec002">
+<title>A simple hardware implementation of a spiking neuron</title>
+<p>Spikeling (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1</xref>) consists of an Arduino Nano microcontroller, a custom-printed circuit board, and a small number of standard electronic components (see Bill of Materials [BOM]). Assembly takes between 20 minutes and 2 hours, depending on previous experience with soldering and assembling circuit boards (see Spikeling manual). Spikeling features large contacts and ample component spacing to facilitate soldering for beginners. The functional properties of Spikeling can be modified by software within the Arduino integrated development environment (IDE).</p>
+<p>Upon current injection, Spikeling begins to fire, with each spike translating into an audible ‘click’ from a speaker. In tandem, membrane potential is continuously tracked by the brightness of a light-emitting-diode (LED). To mimic different types of neurons, Spikeling features a ‘mode button’ for switching between different preprogrammed model behaviours (e.g., regular spiking, fast spiking, bursting, etc.). These can also be modified in the code provided.</p>
+<p>For inputs, Spikeling (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1A</xref>, <xref ref-type="supplementary-material" rid="pbio.2006760.s001">S1 Fig</xref>) has 3 Bayonet Neill-Concelman (BNC) ports. Two are ‘input synapses’ that each respond to 5-V transistor-transistor-logic (TTL) pulses (ports 1 and 2), such as the ‘spike output’ of a second unit. Thus, Spikelings can also be connected into simple neuronal networks (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1B and 1C</xref>). A third BNC input connection (port 3) is an analog-in port that can be driven with a stand-alone stimulus generator or by a computer with a suitable output port. The gain and sign of all inputs can be continuously set with rotary encoder knobs (dials 1 and 2—with dial 2 controlling both analog-in and synapse 2 gain). One aim in the design of Spikeling was to also teach how neurons encode a sensory stimulus, so an on-board photodiode allows Spikeling to sense light. A light stimulus can be delivered externally (e.g., using a torch) or via an LED driven by a programmable on-board pulse generator. To mimic the ‘noisiness’ of biological neurons in intact neural circuits, a knob is provided to add variable amounts of membrane noise to the simulation (dial 3), while a final knob controls a static input current to set resting membrane voltage (dial 4).</p>
+<p>For outputs, Spikeling features digital (port 4) and analog (port 5) BNC connections that can be used to visualise the ‘membrane voltage’ output on an external oscilloscope or to drive another Spikeling. Alternatively, the modelled membrane potential and several key internal processes (e.g., different current sources, input spikes, etc.) can be read out directly through the universal serial bus (USB)-based serial port into a computer for data logging and live display on a monitor (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1B</xref>). We also provide Python (as Jupyter Notebook) and Matlab (Mathsworks) scripts for basic data visualisation and analysis. Finally, the system can be powered through the USB port or by a 9-V battery.</p>
+</sec>
+<sec id="sec003">
+<title>Simulating neuronal activity</title>
+<p>In an informal setting, Spikeling can be explored in a playful manner simply by (i) depolarising or hyperpolarising the neuron via the input current (dial 4), (ii) dialling up the membrane noise (dial 3, <xref ref-type="fig" rid="pbio.2006760.g002">Fig 2A</xref>), or (iii) manual stimulation of the photodiode with a torch (<xref ref-type="fig" rid="pbio.2006760.g002">Fig 2B</xref>, <xref ref-type="supplementary-material" rid="pbio.2006760.s003">S1 Video</xref>). In each case, elicited spike activity can be intuitively tracked by audible clicks coupled with flashes of the onboard LED. In parallel, membrane potential and input current can be tracked live on a personal computer screen through a serial plotter such as the openly available ‘Serial oscilloscope’ [<xref ref-type="bibr" rid="pbio.2006760.ref014">14</xref>] (<xref ref-type="fig" rid="pbio.2006760.g001">Fig 1B</xref>). In this setup, Spikeling can be used to explore basic concepts in neuronal coding. For example, holding a torch over the photodiode initially elicits a burst of spikes that gradually slows down if the light is held in place, thereby mimicking a slowly adapting ‘light-on’ responsive neuron (<xref ref-type="fig" rid="pbio.2006760.g002">Fig 2B</xref>, left). The same experiment with Spikeling set to mode 2 (toggled via the on-board button) will reveal a rapidly adapting rebound burst of spikes upon removing the light, thereby mimicking a transient light-off responsive neuron (<xref ref-type="fig" rid="pbio.2006760.g002">Fig 2B</xref>, center). Next, mode 3 mimics a sustained light-off driven neuron with an elevated basal spike rate (<xref ref-type="fig" rid="pbio.2006760.g002">Fig 2B</xref>, right, confer <xref ref-type="supplementary-material" rid="pbio.2006760.s004">S2 Video</xref>). In total, Spikeling is preprogrammed with 5 modes (<xref ref-type="supplementary-material" rid="pbio.2006760.s002">S2 Fig</xref>). These can easily be modified or extended by the user in the Arduino code provided.</p>
+<fig id="pbio.2006760.g002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g002</object-id>
+<label>Fig 2</label>
+<caption>
+<title>Manual exploration of Spikeling functions.</title>
+<p>A. Example recording of Spikeling membrane potential (top) and current (bottom) during manual manipulations of the input current dial (4) to depolarise the neuron (left), following the addition of a noise current (dial 3, right). B. Example light responses in modes 1–3 (left to right, toggled by the button) to manual PD stimulation with a torch. The grey horizontal lines indicate I<sub>total</sub> = 0. PD, photoiode.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g002" xlink:type="simple"/>
+</fig>
+<p>For more formal experimentation, Spikeling can be driven in a temporally precise manner via the analog-in port or a regularly pulsed light source mounted over the photodiode (<xref ref-type="supplementary-material" rid="pbio.2006760.s005">S3 Video</xref>). As a stimulus, port 1 (synapse 1/stimulus out) can be flexibly reconfigured into a digital stimulus generator. Alternatively, an external 0–5-V analog stimulus generator can be connected (not shown). At default settings, this port will continuously generate 0–5-V pulses at 50% duty cycle, with the stimulation rate being controlled through dial 1. Accordingly, simply connecting port 1 (stimulus out) to port 3 (analog-in) allows for temporally precise stimulation of the model neuron.</p>
+<p>The millisecond precision achieved in this way can then be exploited to study neuronal function in further detail. For example, at default settings (see Spikeling manual) the stimulator directly coupled to the analog-in port drives a highly stereotyped spike train upon repeated stimulation (<xref ref-type="fig" rid="pbio.2006760.g003">Fig 3A</xref>, left), as further elaborated in the raster plot (<xref ref-type="fig" rid="pbio.2006760.g003">Fig 3A</xref>, right, see also <xref ref-type="supplementary-material" rid="pbio.2006760.s002">S2 Fig</xref>). From here, systematic variation of the analog-in gain (dial 2) can be used to drive Spikeling with different amplitude current steps, e.g., to build amplitude tuning functions for spike rate, latency, or first-spike time precision (<xref ref-type="fig" rid="pbio.2006760.g003">Fig 3B</xref>).</p>
+<fig id="pbio.2006760.g003" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g003</object-id>
+<label>Fig 3</label>
+<caption>
+<title>Basic stimulus-driven functions.</title>
+<p>A. Example recording of Spikeling in mode 1 driven by the internal stimulator (port 1) via the analog-in connector (port 3), as indicated. Gain and stimulus rate are controlled on dials 2 and 1, respectively. Right: stimulus aligned response segments (grey) and average (black) as well as spike raster plot. B. As (A, right), with varying input gain to probe amplitude tuning. Note systematic effects on spike number, rate, time latency, and time precision. C. As (A), but this time driving Spikeling via an LED attached to the stimulus port stimulating the photodiode. Note different waveforms of input current and consequences on the elicited spike pattern compared to (A). D. As (C), with addition of current noise (dial 3). Note distortion of spike timings, while the number of spikes triggered remains approximately constant. LED, light-emitting diode.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g003" xlink:type="simple"/>
+</fig>
+<p>Next, rather than delivering port 1’s square–pulse drive via analog-in, the user can instead drive an LED from the same port. In this way, positioning the LED above the photodiode (e.g., via the 3D-printable adapter provided or a custom paper tube) allows for temporally precise driving of Spikeling via light (<xref ref-type="fig" rid="pbio.2006760.g003">Fig 3C</xref>). Adding noise to this simulation allows exploring how the addition of noise initially distorts spike timings before affecting rates (<xref ref-type="fig" rid="pbio.2006760.g003">Fig 3D</xref>).</p>
+<p>Similarly, the experimenter could vary the rate of stimulation to probe the intrinsic frequency tuning of a neuron (dial 1, not shown). At faster stimulus rates, Spikeling can be set to occasionally ‘miss’ individual current steps and instead adopt a volley code [<xref ref-type="bibr" rid="pbio.2006760.ref015">15</xref>] for event timing (<xref ref-type="fig" rid="pbio.2006760.g004">Fig 4A</xref>). In this configuration, Spikeling continues to phase lock to the stimulus, as summarised in the event-aligned plot to the right. Note that even though spikes frequently fail, the subthreshold potential continues to reliably track the stimulus. From here, the static input current (dial 4) and noise (dial 3) can be tweaked to put the system into stochastic resonance [<xref ref-type="bibr" rid="pbio.2006760.ref016">16</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref017">17</xref>]. In this situation, counterintuitively, the addition of noise is beneficial to the code (<xref ref-type="fig" rid="pbio.2006760.g004">Fig 4B</xref>). In the example shown, the ‘generator potential’ (the noise-free stimulus–driven membrane voltage fluctuations) is itself insufficient to elicit any spikes. As a result, the neuron fails to encode the stimulus at the level of its spike output (<xref ref-type="fig" rid="pbio.2006760.g004">Fig 4B</xref>, left). Addition of noise occasionally takes the membrane potential above spike threshold (<xref ref-type="fig" rid="pbio.2006760.g004">Fig 4B</xref>, middle), and the probability of this threshold crossing is higher during a depolarising phase of the generator. As a result, the system now elicits spikes, which, depending on the noise level chosen, reliably phase locks to the stimulus (<xref ref-type="fig" rid="pbio.2006760.g004">Fig 4B</xref>, right). Such stochastic resonance can be used, e.g., by sensory systems to deal with noisy inputs—summing across the spike output from many such resonating neurons can then reconstruct the original stimulus with high fidelity [<xref ref-type="bibr" rid="pbio.2006760.ref018">18</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref019">19</xref>].</p>
+<fig id="pbio.2006760.g004" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g004</object-id>
+<label>Fig 4</label>
+<caption>
+<title>Volley coding and stochastic resonance.</title>
+<p>A. By varying the stimulus rate, Spikeling can be setup to ‘miss’ individual stimulus cycles at the level of the spike output (left). However, when elicited, spikes remain phase locked to the stimulus (right). B. Example of stochastic resonance. As (A), with neuron hyperpolarised just enough to prevent all spikes (left). Now, addition of membrane noise occasionally elicits spikes (middle), which again are phase locked to the stimulus (right). Dotted line indicates approximate spike threshold.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g004" xlink:type="simple"/>
+</fig>
+<p>Next, two or more Spikelings can be connected into a network via BNC cables (<xref ref-type="supplementary-material" rid="pbio.2006760.s006">S4 Video</xref>). For this, the digital-out connector (port 4) of one unit is connected to one of two ‘synapse-in’ connectors (e.g., port 2) on another unit. Synaptic gain can then be controlled using a rotary encoder (here, dial 2) to vary the efficacy and sign of the coupling, thus mimicking excitatory or inhibitory connections (<xref ref-type="fig" rid="pbio.2006760.g005">Fig 5A</xref>). Two reciprocally connected units can then be used to set up a basic central pattern generator [<xref ref-type="bibr" rid="pbio.2006760.ref020">20</xref>] [<xref ref-type="bibr" rid="pbio.2006760.ref021">21</xref>] (<xref ref-type="fig" rid="pbio.2006760.g005">Fig 5B</xref>).</p>
+<fig id="pbio.2006760.g005" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g005</object-id>
+<label>Fig 5</label>
+<caption>
+<title>Synaptic networks.</title>
+<p>A. Two or more Spikelings can be connected to form synaptic connections, as indicated. Left: excitatory synaptic connection with synaptic gain gradually increased by hand over time (dial 2). Right: inhibitory connection at two different depolarisation states (dial 4). B. Example of a 2-neuron CPG. The two Spikelings are set to mode 2 and wired to mutually excite each other. In each case, all traces display the activity and incoming spikes of the top-most Spikeling. CPG, central pattern generator.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g005" xlink:type="simple"/>
+</fig>
+<p>Spikeling can also be used to explore neuronal function more systematically, e.g., by estimating the linear filter that underlies its photo response in a given mode [<xref ref-type="bibr" rid="pbio.2006760.ref022">22</xref>]. This is a fundamental approach in computational and sensory neuroscience, and the calculation of the linear filter is based on recording a neuron’s response to a ‘noise stimulus’ for several minutes. Subsequent reverse correlation of the elicited spike or subthreshold activity against the original stimulus then allows for calculating the average stimulus that drove a response in the neuron: the linear filter, sometimes also referred to as ‘time-reversed impulse response’ or ‘response kernel’. Reverse correlation to spikes is the more common calculation, when the linear filter is also termed the ‘spike-triggered average’ (STA) [<xref ref-type="bibr" rid="pbio.2006760.ref023">23</xref>]. To explore this concept, Spikeling’s stimulus port (1) can be set to generate binary noise at a chosen frequency via a flag in the Arduino code (see Spikeling manual). In this configuration, the photodiode can be stimulated by this noise stimulus via an LED as before (<xref ref-type="fig" rid="pbio.2006760.g006">Fig 6A</xref>, confer <xref ref-type="fig" rid="pbio.2006760.g003">Fig 3C</xref>), thereby driving spikes and subthreshold oscillations. The linear filters of a mode 1 Spikeling (‘slow’) reveal a clear biphasic (band pass) stimulus dependence at the level of spikes but a monophasic dependence (low pass) at the level of subthreshold activity (<xref ref-type="fig" rid="pbio.2006760.g006">Fig 6B</xref>, black). In comparison, the same mode 1 neuron retuned to use a rapidly adapting photodiode-driven current (‘fast’) gives a triphasic stimulus dependence at the level of spikes and a biphasic dependence at the level of the subthreshold generator (<xref ref-type="fig" rid="pbio.2006760.g006">Fig 6B</xref>, red).</p>
+<fig id="pbio.2006760.g006" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g006</object-id>
+<label>Fig 6</label>
+<caption>
+<title>Estimating linear filters by reverse correlation.</title>
+<p>A. Via the Arduino code, the stimulus port can be set to deliver 50 Hz binary noise, here used to drive the photodiode via an LED (confer <xref ref-type="fig" rid="pbio.2006760.g003">Fig 3C</xref>). Current and spike pattern elicited by this stimulus. B. Linear filters of a slow (black) and a fast (red) photo-adapting mode 1 neuron estimated at the level of spikes (left) and subthreshold membrane potential (right). LED, light-emitting diode.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g006" xlink:type="simple"/>
+</fig>
+<p>Taken together, Spikeling can be used in a variety of classroom and demonstration scenarios, ranging from simple observations of changes in spike rates upon stimulation to advanced concepts in neuronal computation and analysis.</p>
+<p>An example set of Spikeling-based classroom exercises is provided (see Spikeling manual). From here, advanced users can easily reprogramme the Arduino code to implement or fine tune further functionalities as required. The entire project, including all code, hardware design, BOMs, and detailed build instructions are available online for anyone to freely view and modify (<ext-link ext-link-type="uri" xlink:href="https://github.com/BadenLab/Spikeling" xlink:type="simple">https://github.com/BadenLab/Spikeling</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://badenlab.org/resources/" xlink:type="simple">https://badenlab.org/resources/</ext-link>).</p>
+</sec>
+<sec id="sec004">
+<title>Spikeling in the classroom</title>
+<p>We evaluated the utility of Spikeling in two classroom scenarios: (i) as a 2-day section within a 3-week intensive neuroscience summer school held at Gombe State University, Nigeria by TReND in Africa [<xref ref-type="bibr" rid="pbio.2006760.ref024">24</xref>] and (ii) as part of an 18-lecture module on ‘Sensory function and computation’ delivered to third year undergraduate and MSc neuroscience students at the University of Sussex, UK. We report on each experience in turn.</p>
+<p>At Gombe State University, Nigeria, we ran two identical 2-day sessions for a total of 18 Africa-based biomedical graduate students (9 at a time) as part of the seventh TReND/ International Society of Neurochemistry (ISN) school on Insect Neuroscience and <italic>Drosophila</italic> Neurogenetics [<xref ref-type="bibr" rid="pbio.2006760.ref024">24</xref>]. None of the students had much experience with neuronal computation or electrophysiological techniques, although most had covered basic concepts in neuroscience such as action potential generation in their undergraduate degrees. We introduced Spikeling in three steps. First, we held a 1-hour lecture during which a single Spikeling was connected to a computer with the serial oscilloscope output being projected live to the wall. In parallel, a whiteboard was used for explanations and discussions. From here, we combined a general explanation of concepts in neuronal computation on the board (e.g., rate versus time coding, subthreshold integration, phase locking etc.) and then demonstrated each phenomenon in front of the class using Spikeling. Based on feedback after the class, this was perceived as a very engaging and effective method for introducing concepts in neuronal coding. Next, we moved on to assembling Spikelings from bags of precompiled parts (<xref ref-type="fig" rid="pbio.2006760.g007">Fig 7A and 7B</xref>). For this, every student was provided with the printed circuit board, the electronic components, and a soldering iron and taken through the assembly process by two instructors. After 2–3 hours, every student had successfully assembled a working unit, despite most not having had any experience with soldering or electronic circuit logic. In a third step, each student was then provided with the serial oscilloscope software as well as the exercise document and asked to sequentially work through a set of predesigned exercises (<xref ref-type="fig" rid="pbio.2006760.g007">Fig 7C and 7D</xref>, see Spikeling manual) in their own time, with faculty being available to help as required. Following the course, all students kept their Spikeling to facilitate their own teaching at their host institutions in 7 different African countries (Nigeria, Malawi, Sudan, Egypt, Kenya, Zambia, and Burkina Faso).</p>
+<fig id="pbio.2006760.g007" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pbio.2006760.g007</object-id>
+<label>Fig 7</label>
+<caption>
+<title>Spikeling in the classroom.</title>
+<p>A. ‘Bag of parts’ disassembled Spikeling, as used in our summer school in Gombe, Nigeria. B. Students soldering Spikelings as part of an in-class exercise on do-it-yourself equipment building. C, D. Students exploring Spikeling functions based on an exercise sheet provided (see Spikeling manual). E, F. In-class use of Spikeling as part of a computer lab for third year neuroscience undergraduates at the University of Sussex, UK.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.g007" xlink:type="simple"/>
+</fig>
+<p>At the University of Sussex, UK, we introduced preassembled Spikelings as part of 3 sets of 3-hour workshops provided to students in groups of 13. For this, we used a PC lab where each student had their own Spikeling and PC with Arduino, Serial Oscilloscope, and Matlab preinstalled (<xref ref-type="fig" rid="pbio.2006760.g007">Fig 7E and 7F</xref>). The first session began with a 20-minute presentation of basic concepts in neuronal modelling and electronics, followed by a conceptual comparison between the biophysically realistic yet computationally heavy Hodgkin Huxley model [<xref ref-type="bibr" rid="pbio.2006760.ref025">25</xref>], [<xref ref-type="bibr" rid="pbio.2006760.ref026">26</xref>] and the much lighter phenomenological Izhikevich model [<xref ref-type="bibr" rid="pbio.2006760.ref007">7</xref>] implemented in Spikeling. Next, we projected the serial oscilloscope screen of a Spikeling connected to the lecturer’s laptop to the wall. This allowed easy, live demonstrations of some Spikeling functions, such as the photo response or the use of different modes. From here, we asked students to connect and set up their own units on their PCs and to start exploring ‘how to best drive spikes’ using their mobile phone torches. Students quickly realised that simply holding the light above the photodiode ceases to be effective after a few hundred milliseconds, while repeatedly moving the light over the photodiode reliably elicits bursts of spikes. In this way, students could intuitively explore basic concepts in time coding.</p>
+<p>Afterwards, we brought everyone back to the same page by demonstrating these key ideas on the Spikeling output projected onto the wall. We then showed students how to use the stimulator, what the dials do, and how to log data on the serial oscilloscope. We also showed them how to load and display their data using prewritten Matlab routines (see Supporting information, which also provides analogous Python routines). From this point, we asked students to carry out their first ‘experiment’ quantifying a neuron’s tuning using 2 measures of response amplitude, instantaneous spike rate, and first-spike latency. These 2 tuning curves were compared, again followed by an in-class demonstration and discussion. In this way, we moved through the majority of Spikeling functions described in this paper over the course of 3 workshops.</p>
+<p>Taken together, Spikeling allowed students to explore a number of fundamental aspects in sensory neuroscience, including analog and digital coding, detection of signals above noise, the functional consequences of adaptation, and the variety of temporal filters that neurons implement. The concepts acquired, as tested with take-home problem sets, dovetailed with lecture content covering rate and time coding, feature selectivity and tuning diversity, and adaptation. Students reported that the Spikeling work helped them to develop a more intuitive grasp of these central ideas in sensory and systems neuroscience.</p>
+</sec>
+</sec>
+<sec id="sec005" sec-type="conclusions">
+<title>Discussion</title>
+<p>With modern systems of neuroscience increasingly moving into the area of big data for which the activity of thousands of neurons can be routinely recorded across a wide range of neuronal circuits [<xref ref-type="bibr" rid="pbio.2006760.ref027">27</xref>–<xref ref-type="bibr" rid="pbio.2006760.ref033">33</xref>], a deep understanding of how neurons encode and compute information is fundamental. These concepts need to be taught not just to students of the biological sciences but also to students of psychology as well as engineers and computer scientists interested in theoretical and computational neuroscience, artificial intelligence, and robotics [<xref ref-type="bibr" rid="pbio.2006760.ref004">4</xref>]. However, concepts in neuronal coding and computation can be unintuitive to grasp or ‘dry’ in lectures, while classroom electrophysiology on live biological specimens can be technically challenging and costly to set up [<xref ref-type="bibr" rid="pbio.2006760.ref003">3</xref>]. As a result, many students in these disciplines graduate without ever having had the opportunity to experience and control neuronal activity in hands-on experiments. Indeed, in many parts of the world, systems of neuroscience are only a rather peripheral aspect of neuroscience curricula, if present at all, while the cross-over of neuroscience into engineering and informatics often jumps immediately into discussions of networks based on units that are greatly simplified versions of biological neurons.</p>
+<p>Spikeling is intended to help ameliorate some of these issues by allowing students to carry out experiments in the same general fashion as classical electrophysiologists but without the amplifiers, filters, manipulators, stimulus generators, and other equipment normally required. Its low cost makes it widely affordable, and once assembled, it can be used for teaching for many years without additional investment. It should also be immediately approachable to students of engineering and informatics who can explore the electrical properties of neurons and the code used to model these as well as carry out experiments illustrating basic concepts in theoretical and computational neuroscience [<xref ref-type="bibr" rid="pbio.2006760.ref023">23</xref>]. By allowing students to interact physically with the device, e.g., by providing actual sensory inputs, Spikeling can help build an intuitive grasp of neuronal computations beyond that provided by pure computer simulation of neurons.</p>
+<p>Other recent efforts have also recognised the need for more intuitive hardware models of spiking neurons, most notably the Neurotinker initiative [<xref ref-type="bibr" rid="pbio.2006760.ref034">34</xref>], who release NeuroBytes. These come in a variety of neuron types, such as photoreceptors or motorneurons, and run a simple integrate-and-fire type model. Generally, NeuroBytes are designed to be very easy to use and to be connected in larger networks to teach neuronal control logic to children in a playful manner, albeit at the trade-off of giving less user control over model behaviour and data logging. In contrast, Spikeling is perhaps more suitable for undergraduate-level neuroscience education. Another initiative aiming to build microcontroller-based neurons is Spikee [<xref ref-type="bibr" rid="pbio.2006760.ref035">35</xref>]. Finally, others have implemented the Izhikevich model on more powerful processors such as a Programmable-Intelligent-Computer-32 (PIC32) [<xref ref-type="bibr" rid="pbio.2006760.ref036">36</xref>] or a field-programmable gate array (FPGA) [<xref ref-type="bibr" rid="pbio.2006760.ref037">37</xref>]; however, these more expensive and complex implementations are, at least currently, more aimed at professionals in computing and electronic engineering and do not come with a dedicated lay and user-friendly interface. Notwithstanding, there are already many software-only implementations of neuron models available online for both research and teaching, including several that are free and open source. For example, NEURON [<xref ref-type="bibr" rid="pbio.2006760.ref038">38</xref>] is a popular high-end neuron simulator environment used primarily in research, while simulator for neural networks and action potentials (SNNAP) [<xref ref-type="bibr" rid="pbio.2006760.ref039">39</xref>] and MetaNeuron [<xref ref-type="bibr" rid="pbio.2006760.ref040">40</xref>] are but two of many examples of educational options.</p>
+<p>With time, we hope that others may take up our basic design and build upon it, e.g., by providing inputs to other sensory modalities such as touch or sound or by changing the Arduino code to implement new functions or simulate neurons with different tuning properties. Spikeling could also be used as a ‘test-neuron’ in conjunction with existing electrophysiological equipment, e.g., to quickly verify stimulus protocols or as a stimulus generator.</p>
+<p>Another point for future improvements is the model refresh rate. In the current ‘standard’ setup with all options enabled, the model runs at approximately 420 Hz. While this is easily sufficient to model basic conceptual processes of neuronal function, it is slower than what might be expected from, e.g., a mammalian cortical neuron and instead rather resembles neurons of cold-blooded species. If desired, we elaborate how the user can trade-off model complexity for speed (see Spikeling manual).</p>
+<p>Notably, we are currently working on a version 2.0 of Spikeling, which uses the more powerful and WiFi-capable ESP8266 instead of the Arduino Nano. This version can either execute the model at about 5 to 10 times the speed of the version presented here, or alternatively drive a standalone colour thin film transistor (TFT) screen at approximately the same speed as the Arduino Nano (without screen). For Spikeling 2.0, please refer to the GitHub, which is updated on an ongoing basis.</p>
+<p>Spikeling is available on a share-alike open license, prompting any modifications of the original code to be freely distributed for everyone to use. We aim to keep these efforts centralised on the Spikeling GitHub (<ext-link ext-link-type="uri" xlink:href="https://github.com/BadenLab/Spikeling" xlink:type="simple">https://github.com/BadenLab/Spikeling</ext-link>) or link to new repositories as they arise to gradually build a community of users and contributors. For convenience, we also setup a simplified component sourcing option Kitspace at <ext-link ext-link-type="uri" xlink:href="https://kitspace.org/boards/github.com/badenlab/spikeling/" xlink:type="simple">https://kitspace.org/boards/github.com/badenlab/spikeling/</ext-link>. All hardware instructions, code, manuals, and example data are freely available at <ext-link ext-link-type="uri" xlink:href="https://github.com/BadenLab/Spikeling" xlink:type="simple">https://github.com/BadenLab/Spikeling</ext-link> and <ext-link ext-link-type="uri" xlink:href="https://badenlab.org/resources/" xlink:type="simple">https://badenlab.org/resources/</ext-link>.</p>
+</sec>
+<sec id="sec006">
+<title>Supporting information</title>
+<supplementary-material id="pbio.2006760.s001" mimetype="image/tiff" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s001" xlink:type="simple">
+<label>S1 Fig</label>
+<caption>
+<title>Circuit and printed circuit board layout.</title>
+<p>A. Wiring diagram of Spikeling. B. PCB layout.</p>
+<p>(TIF)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s002" mimetype="image/tiff" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s002" xlink:type="simple">
+<label>S2 Fig</label>
+<caption>
+<title>Mode overview.</title>
+<p>A, B. All 5 preprogrammed Spikeling modes responding to current (A) and light steps (B). Additional modes can be easily added in the Arduino code (see Spikeling manual).</p>
+<p>(TIF)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s003" mimetype="video/mp4" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s003" xlink:type="simple">
+<label>S1 Video</label>
+<caption>
+<title>Basic functions.</title>
+<p>(MP4)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s004" mimetype="video/mp4" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s004" xlink:type="simple">
+<label>S2 Video</label>
+<caption>
+<title>Modes.</title>
+<p>(MP4)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s005" mimetype="video/mp4" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s005" xlink:type="simple">
+<label>S3 Video</label>
+<caption>
+<title>Stimulus generator.</title>
+<p>(MP4)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s006" mimetype="video/mp4" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s006" xlink:type="simple">
+<label>S4 Video</label>
+<caption>
+<title>Synaptic networks.</title>
+<p>(MP4)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pbio.2006760.s007" mimetype="application/pdf" position="float" xlink:href="info:doi/10.1371/journal.pbio.2006760.s007" xlink:type="simple">
+<label>S1 Text</label>
+<caption>
+<title>Spikeling Manual, including assembly and example exercises; BOM; PCB layout files (Eagle); Arduino code for Spikeling; Matlab (times 2) and Python code for basic data analysis and visualisation; OpenSCAD and STL files for 3D-printable LED-mounting adapter; and example logged data (CSV).</title>
+<p>BOM, Bill of Materials; CSV, comma separated variable; LED, light-emitting diode; PCB; STL, surface-tessilation.</p>
+<p>(PDF)</p>
+</caption>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ack>
+<p>We thank Peter Reed, Chen Qian, and Andre Maia Chagas for technical advice and Ihab Riad and Lucia Prieto Godino for helping with in-class Spikeling assembly and teaching in Nigeria. The authors would also like to acknowledge support from the FENS-Kavli Network of Excellence. In addition, we would like to thank the ISN, the Company of Biologists, the Cambridge Alborada Fund, and hhmi Janelia Research Campus for supporting our work in Nigeria.</p>
+</ack>
+<fn-group>
+<fn fn-type="other" id="fn001">
+<p><bold>Provenance:</bold> Not commissioned; externally peer reviewed</p>
+</fn>
+</fn-group>
+<glossary>
+<title>Abbreviations</title>
+<def-list>
+<def-item><term>BNC</term>
+<def><p>Bayonet Neill-Concelman</p></def>
+</def-item>
+<def-item><term>BOM</term>
+<def><p>bill of materials</p></def>
+</def-item>
+<def-item><term>CSV</term>
+<def><p>comma separated variable</p></def>
+</def-item>
+<def-item><term>FPGA</term>
+<def><p>field-programmable gate array</p></def>
+</def-item>
+<def-item><term>IDE</term>
+<def><p>integrated development environment</p></def>
+</def-item>
+<def-item><term>LED</term>
+<def><p>light-emitting diode</p></def>
+</def-item>
+<def-item><term>PCB</term>
+<def><p>printed circuit board</p></def>
+</def-item>
+<def-item><term>PIC32</term>
+<def><p>programmable-intelligent-computer-32</p></def>
+</def-item>
+<def-item><term>SNNAP</term>
+<def><p>simulator for neural networks and action potentials</p></def>
+</def-item>
+<def-item><term>STL</term>
+<def><p>surface-tessilation</p></def>
+</def-item>
+<def-item><term>TFT</term>
+<def><p>thin film transistor</p></def>
+</def-item>
+<def-item><term>TTL</term>
+<def><p>transistor-transistor-logic</p></def>
+</def-item>
+<def-item><term>USB</term>
+<def><p>universal serial bus</p></def>
+</def-item>
+</def-list>
+</glossary>
+<ref-list>
+<title>References</title>
+<ref id="pbio.2006760.ref001"><label>1</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Ramos</surname> <given-names>RL</given-names></name>, <name name-style="western"><surname>Fokas</surname> <given-names>GJ</given-names></name>, <name name-style="western"><surname>Bhambri</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Smith</surname> <given-names>PT</given-names></name>, <name name-style="western"><surname>Hallas</surname> <given-names>BH</given-names></name>, <name name-style="western"><surname>Brumberg</surname> <given-names>JC</given-names></name>. <article-title>Undergraduate Neuroscience Education in the U.S.: An Analysis using Data from the National Center for Education Statistics</article-title>. <source>J. Undergrad. Neurosci. Educ</source>. <year>2011</year>. vol. <volume>9</volume>, no. <issue>2</issue>, pp. <fpage>A66</fpage>–<lpage>70</lpage>. <object-id pub-id-type="pmid">23493915</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref002"><label>2</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Frantz</surname> <given-names>KJ</given-names></name>, <name name-style="western"><surname>McNerney</surname> <given-names>CD</given-names></name>, <name name-style="western"><surname>Spitzer</surname> <given-names>NC</given-names></name>. <article-title>We’ve Got NERVE: A Call to Arms for Neuroscience Education</article-title>. <source>J. Neurosci</source>. <year>2009</year>. vol. <volume>29</volume>, no. <issue>11</issue>, pp. <fpage>3337</fpage>–<lpage>3339</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1523/JNEUROSCI.0001-09.2009" xlink:type="simple">10.1523/JNEUROSCI.0001-09.2009</ext-link></comment> <object-id pub-id-type="pmid">19295139</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref003"><label>3</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Mead</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Dearworth</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Grisham</surname> <given-names>W</given-names></name>, <name name-style="western"><surname>Herin</surname> <given-names>GA</given-names></name>, <name name-style="western"><surname>Jarrard</surname> <given-names>H</given-names></name>, <name name-style="western"><surname>Paul</surname> <given-names>CA</given-names></name> <etal>et al</etal>. <article-title>A Description of the Introduction to FUN Electrophysiology Labs Workshop at Bowdoin College, July 27–30, and the Resultant Faculty Learning Community</article-title>. <source>J. Undergrad. Neurosci. Educ.</source> <year>2007</year>. vol. <volume>5</volume>, no. <issue>2</issue>, pp. <fpage>42</fpage>–<lpage>48</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref004"><label>4</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Litt</surname> <given-names>B</given-names></name>. <article-title>Engineering the next generation of brain scientists</article-title>. <source>Neuron</source>. <year>2015</year>. vol. <volume>86</volume>, no. <issue>1</issue>. pp. <fpage>16</fpage>–<lpage>20</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1016/j.neuron.2015.03.029" xlink:type="simple">10.1016/j.neuron.2015.03.029</ext-link></comment> <object-id pub-id-type="pmid">25856480</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref005"><label>5</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Petto</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Fredin</surname> <given-names>Z</given-names></name>, <name name-style="western"><surname>Burdo</surname> <given-names>J</given-names></name>. <article-title>The Use of Modular, Electronic Neuron Simulators for Neural Circuit Construction Produces Learning Gains in an Undergraduate Anatomy and Physiology Course</article-title>. <year>2017</year>. <source>J. Undergrad. Neurosci. Educ.</source>, vol. <volume>15</volume>, no. <issue>2</issue>, pp. <fpage>151</fpage>–<lpage>156</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref006"><label>6</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Friedman</surname> <given-names>DP</given-names></name>. <article-title>Public Outreach: A Scientific Imperative</article-title>. <source>J. Neurosci.</source>, <year>2008</year>. vol. <volume>28</volume>, no. <issue>46</issue>, pp. <fpage>11743</fpage>–<lpage>11745</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1523/JNEUROSCI.0005-08.2008" xlink:type="simple">10.1523/JNEUROSCI.0005-08.2008</ext-link></comment> <object-id pub-id-type="pmid">19005034</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref007"><label>7</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Izhikevich</surname> <given-names>EM</given-names></name>. <article-title>Simple model of spiking neurons</article-title>. <year>2003</year>. <source>IEEE Trans Neural Netw</source>, vol. <volume>14</volume>, no. <issue>6</issue>, pp. <fpage>1569</fpage>–<lpage>1572</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1109/TNN.2003.820440" xlink:type="simple">10.1109/TNN.2003.820440</ext-link></comment> <object-id pub-id-type="pmid">18244602</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref008"><label>8</label><mixed-citation publication-type="other" xlink:type="simple">Arduino. [Online]. 2003. Available from: <ext-link ext-link-type="uri" xlink:href="http://www.arduino.cc/" xlink:type="simple">http://www.arduino.cc/</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref009"><label>9</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Chagas</surname> <given-names>AM</given-names></name>, <name name-style="western"><surname>Gage</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Marzullo</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Prieto-Godino</surname> <given-names>LL</given-names></name>, <name name-style="western"><surname>Euler</surname> <given-names>T</given-names></name>. <article-title>Open Labware: 3-D printing your own lab equipment</article-title>. <source>PLoS Biol</source>. <year>2015</year>. vol. <volume>13</volume>, no. <issue>3</issue>, p. <fpage>e1002086</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1371/journal.pbio.1002086" xlink:type="simple">10.1371/journal.pbio.1002086</ext-link></comment> <object-id pub-id-type="pmid">25794301</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref010"><label>10</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Pearce</surname> <given-names>JM</given-names></name>. <source>Open-Source lab</source>, <edition>1st ed</edition>. <publisher-name>Elsevier</publisher-name>, <year>2013</year>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref011"><label>11</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Mahowald</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Douglas</surname> <given-names>R</given-names></name>. <article-title>A silicon neuron</article-title>. <source>Nature</source>. <year>1991</year>. vol. <volume>354</volume>, no. <issue>6354</issue>, pp. <fpage>515</fpage>–<lpage>8</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/354515a0" xlink:type="simple">10.1038/354515a0</ext-link></comment> <object-id pub-id-type="pmid">1661852</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref012"><label>12</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>John Nicholls</surname> <given-names>RM</given-names></name>. <article-title>From Neuron to Brain</article-title>. <source>University of Colorado—School of Medicine</source>. <year>2012</year>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1371/journal.pmed.1001290" xlink:type="simple">10.1371/journal.pmed.1001290</ext-link></comment></mixed-citation></ref>
+<ref id="pbio.2006760.ref013"><label>13</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Sterling P Laughlin</surname> <given-names>SB</given-names></name>. <source>Principles of Neural Design</source>. <publisher-name>The MIT press</publisher-name>, <year>2016</year>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref014"><label>14</label><mixed-citation publication-type="other" xlink:type="simple">Serial Oscilloscope. 2013. [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="http://x-io.co.uk/serial-oscilloscope/" xlink:type="simple">http://x-io.co.uk/serial-oscilloscope/</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref015"><label>15</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wever EG Bray</surname> <given-names>CW</given-names></name>. <article-title>The perception of low tones and the resonance-volley theory</article-title>. <source>J. Psychol. Interdiscip. Appl</source>. <year>1937</year>. vol. <volume>3</volume>, no. <issue>1</issue>, pp. <fpage>101</fpage>–<lpage>114</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref016"><label>16</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Gammaitoni</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Hänggi</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Jung</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Marchesoni</surname> <given-names>F</given-names></name>. <article-title>Stochastic resonance</article-title>. <source>Rev. Mod. Phys</source>. <year>1998</year>. vol. <volume>70</volume>, no. <issue>1</issue>, pp. <fpage>223</fpage>–<lpage>287</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref017"><label>17</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Shimokawa</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Rogel</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Pakdaman</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Sato</surname> <given-names>S</given-names></name>. <article-title>Stochastic resonance and spike-timing precision in an ensemble of leaky integrate and fire neuron models</article-title>. <source>Phys. Rev. E</source>. <year>1999</year>. vol. <volume>59</volume>, no. <issue>3</issue>, pp. <fpage>3461</fpage>–<lpage>3470</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref018"><label>18</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Esposti</surname> <given-names>F</given-names></name>, <name name-style="western"><surname>Nikolaev</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Lagnado</surname> <given-names>L</given-names></name>. <article-title>Spikes in Retinal Bipolar Cells Phase-Lock to Visual Stimuli with Millisecond Precision</article-title>. <source>Curr. Biol</source>. <year>2011</year>. vol. <volume>21</volume>, no. <issue>22</issue>, pp. <fpage>1859</fpage>–<lpage>1869</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1016/j.cub.2011.09.042" xlink:type="simple">10.1016/j.cub.2011.09.042</ext-link></comment> <object-id pub-id-type="pmid">22055291</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref019"><label>19</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Nikolaev</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Esposti</surname> <given-names>F</given-names></name>, <name name-style="western"><surname>Dreosti</surname> <given-names>E</given-names></name>, <name name-style="western"><surname>Odermatt</surname> <given-names>B</given-names></name>, <name name-style="western"><surname>Lagnado</surname> <given-names>L</given-names></name>. <article-title>A Synaptic Mechanism for Temporal Filtering of Visual Signals</article-title>. <source>PLoS Biol</source>. <year>2014</year>. vol. <volume>12</volume>, no. <issue>10</issue>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref020"><label>20</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Hooper</surname> <given-names>SL</given-names></name>. <article-title>Central Pattern Generators</article-title>. <source>eLS</source>, <year>2001</year>. pp. <fpage>1</fpage>–<lpage>12</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref021"><label>21</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Sherrington</surname> <given-names>CS</given-names></name>. <article-title>Flexion‐reflex of the limb, crossed extension‐reflex, and reflex stepping and standing</article-title>. <source>J. Physiol</source>. <year>1910</year>. vol. <volume>40</volume>, no. <issue>1–2</issue>, pp. <fpage>28</fpage>–<lpage>121</lpage>. <object-id pub-id-type="pmid">16993027</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref022"><label>22</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Chichilnisky</surname> <given-names>EJ</given-names></name>. <article-title>A simple white noise analysis of neuronal light</article-title>. <source>Netw. Comput. Neural Syst</source>. <year>2001</year>. vol. <volume>12</volume>, pp. <fpage>199</fpage>–<lpage>213</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref023"><label>23</label><mixed-citation publication-type="book" xlink:type="simple"><name name-style="western"><surname>Abbott</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Dayan</surname> <given-names>P</given-names></name>. <source>Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems</source>. <publisher-name>The MIT Press</publisher-name>, <year>2005</year>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref024"><label>24</label><mixed-citation publication-type="other" xlink:type="simple">Prieto Godino LL, Baden T. 2012. “TReND in Africa.” [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="http://www.TReNDinAfrica.org" xlink:type="simple">www.TReNDinAfrica.org</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref025"><label>25</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Hodgkin</surname> <given-names>AL</given-names></name>, <name name-style="western"><surname>Huxley</surname> <given-names>AF</given-names></name>. <article-title>A quantitative description of membrane current and its application to conduction and excitation in nerve</article-title>. <source>J.Physiol</source>. <year>1952</year>. vol. <volume>117</volume>, pp. <fpage>500</fpage>–<lpage>544</lpage>. <object-id pub-id-type="pmid">12991237</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref026"><label>26</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Santamaria</surname> <given-names>F</given-names></name>, <name name-style="western"><surname>Bower</surname> <given-names>JM</given-names></name>. <article-title>Hodgkin-Huxley Models</article-title>. in <source>Encyclopedia of Neuroscience</source>. <year>2010</year>. pp. <fpage>1173</fpage>–<lpage>1180</lpage>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref027"><label>27</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Ahrens</surname> <given-names>MB</given-names></name>, <name name-style="western"><surname>Li</surname> <given-names>JM</given-names></name>, <name name-style="western"><surname>Orger</surname> <given-names>MB</given-names></name>, <name name-style="western"><surname>Robson</surname> <given-names>DN</given-names></name>, <name name-style="western"><surname>Schier</surname> <given-names>AF</given-names></name>, <name name-style="western"><surname>Engert</surname> <given-names>F</given-names></name>. <article-title>Brain-wide neuronal dynamics during motor adaptation in zebrafish</article-title>. <source>Nature</source>. <year>2012</year>. vol. <volume>485</volume>, no. <issue>7399</issue>, pp. <fpage>471</fpage>–<lpage>7</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nature11057" xlink:type="simple">10.1038/nature11057</ext-link></comment> <object-id pub-id-type="pmid">22622571</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref028"><label>28</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Field</surname> <given-names>GD</given-names></name>, <name name-style="western"><surname>Gauthier</surname> <given-names>JL</given-names></name>, <name name-style="western"><surname>Sher</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Greschner</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Machado</surname> <given-names>TA</given-names></name>, <name name-style="western"><surname>Jepson</surname> <given-names>LH</given-names></name> <etal>et al</etal>., <article-title>Functional connectivity in the retina at the resolution of photoreceptors</article-title>. <source>Nature</source>. <year>2010</year>. vol. <volume>467</volume>, no. <issue>7316</issue>, pp. <fpage>673</fpage>–<lpage>7</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nature09424" xlink:type="simple">10.1038/nature09424</ext-link></comment> <object-id pub-id-type="pmid">20930838</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref029"><label>29</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Berens</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Franke</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Roman-Roson</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Bethge</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Euler</surname> <given-names>T</given-names></name>. <article-title>The functional diversity of mouse retinal ganglion cells</article-title>. <source>Nature</source>, <year>2016</year>. <volume>529</volume>, <fpage>345</fpage>–<lpage>350</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nature16468" xlink:type="simple">10.1038/nature16468</ext-link></comment> <object-id pub-id-type="pmid">26735013</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref030"><label>30</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Franke</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Berens</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Schubert</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Bethge</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Euler</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>. <article-title>Inhibition decorrelates visual feature representations in the inner retina</article-title>. <source>Nature</source>. <year>2017</year>. vol. <volume>542</volume>, no. <issue>7642</issue>, pp. <fpage>439</fpage>–<lpage>444</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nature21394" xlink:type="simple">10.1038/nature21394</ext-link></comment> <object-id pub-id-type="pmid">28178238</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref031"><label>31</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Zimmermann</surname> <given-names>MJ</given-names></name>, <name name-style="western"><surname>Nevala</surname> <given-names>N</given-names></name>, <name name-style="western"><surname>Yoshimatsu</surname> <given-names>T</given-names></name>, <name name-style="western"><surname>Osorio</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Nilsson</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Berens</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Baden</surname> <given-names>T</given-names></name>. <article-title>Zebrafish differentially process colour across visual space to match natural scenes</article-title>. <source>Current Biology</source>. <year>2018</year>. vol. <volume>28</volume>, pp. <fpage>2018</fpage>–<lpage>32</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1016/j.cub.2018.04.075" xlink:type="simple">10.1016/j.cub.2018.04.075</ext-link></comment> <object-id pub-id-type="pmid">29937350</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref032"><label>32</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Jun</surname> <given-names>JJ</given-names></name>, <name name-style="western"><surname>Steinmetz</surname> <given-names>NA</given-names></name>, <name name-style="western"><surname>Siegle</surname> <given-names>JH</given-names></name>, <name name-style="western"><surname>Denman</surname> <given-names>DJ</given-names></name>, <name name-style="western"><surname>Bauza</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Barbarits</surname> <given-names>B</given-names></name> <etal>et al</etal>. <article-title>Fully integrated silicon probes for high-density recording of neural activity</article-title>. <source>Nature</source>. <year>2017</year>. vol. <volume>551</volume>, no. <issue>7679</issue>, pp. <fpage>232</fpage>–<lpage>236</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nature24636" xlink:type="simple">10.1038/nature24636</ext-link></comment> <object-id pub-id-type="pmid">29120427</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref033"><label>33</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Stevenson</surname> <given-names>IH</given-names></name>, <name name-style="western"><surname>Kording</surname> <given-names>KP</given-names></name>. <article-title>How advances in neural recording affect data analysis</article-title>. <source>Nature Neuroscience</source>. <year>2011</year>. vol. <volume>14</volume>, no. <issue>2</issue>, pp. <fpage>139</fpage>–<lpage>142</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1038/nn.2731" xlink:type="simple">10.1038/nn.2731</ext-link></comment> <object-id pub-id-type="pmid">21270781</object-id></mixed-citation></ref>
+<ref id="pbio.2006760.ref034"><label>34</label><mixed-citation publication-type="other" xlink:type="simple">Neurotinker. 2015. [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="http://www.neurotinker.com" xlink:type="simple">http://www.neurotinker.com</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref035"><label>35</label><mixed-citation publication-type="other" xlink:type="simple">Spikee. 2015. [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="https://www.youtube.com/channel/UCbnGzeoLUJIPCgCkfZseexg" xlink:type="simple">https://www.youtube.com/channel/UCbnGzeoLUJIPCgCkfZseexg</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref036"><label>36</label><mixed-citation publication-type="other" xlink:type="simple">Land BR. Izhikevich neuron model optimized for PIC32. 2016. [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="https://hackaday.io/project/18613-izhikevich-neuron-model-optimized-for-pic32" xlink:type="simple">https://hackaday.io/project/18613-izhikevich-neuron-model-optimized-for-pic32</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref037"><label>37</label><mixed-citation publication-type="other" xlink:type="simple">Land BR. “Neuron Models on FPGA.” [Online]. 2016. Available from: <ext-link ext-link-type="uri" xlink:href="http://people.ece.cornell.edu/land/courses/ece5760/DDA/NeuronIndex.htm" xlink:type="simple">http://people.ece.cornell.edu/land/courses/ece5760/DDA/NeuronIndex.htm</ext-link>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref038"><label>38</label><mixed-citation publication-type="other" xlink:type="simple">NEURON 2005. [Online]. Available from: <ext-link ext-link-type="uri" xlink:href="https://www.neuron.yale.edu/neuron/" xlink:type="simple">https://www.neuron.yale.edu/neuron/</ext-link></mixed-citation></ref>
+<ref id="pbio.2006760.ref039"><label>39</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Baxter</surname> <given-names>DA</given-names></name>, <name name-style="western"><surname>Byrne</surname> <given-names>JH</given-names></name>. <article-title>Simulator for neural networks and action potentials: Description and application</article-title>. <source>In: Methods in Molecular Biology: Neuroinformatics</source> (<name name-style="western"><surname>Crasto</surname> <given-names>CJ</given-names></name>, ed), pp <fpage>127</fpage>–<lpage>154</lpage>, Totowa, NJ, <year>2007</year>.</mixed-citation></ref>
+<ref id="pbio.2006760.ref040"><label>40</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Newman</surname> <given-names>MH</given-names></name>, <name name-style="western"><surname>Newman</surname> <given-names>EA</given-names></name>. <article-title>MetaNeuron: A Free Neuron Simulation Program for Teaching Cellular Neurophysiology</article-title>. <source>J Undergrad. Neurosci. Educ</source>. <year>2013</year>. Vol. <volume>12</volume>(<issue>1</issue>), pp. <fpage>11</fpage>–<lpage>17</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+</article>
