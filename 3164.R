@@ -1,18 +1,63 @@
-library("XML")
-library("methods")
-library("xml2")
+rm(list = ls())
+library("slam")
+library("tm")
+library("SnowballC")
 library("dplyr")
-library("tidyr")
-library("readr")
-
-# Convert the input xml file to a data frame.
-
-data = read_xml("journal.pbio.0040153.xml")%>% as_list()
-driver_tb1 = tibble::as.tibble(data) %>% unnest_longer('article')
-df_data <-driver_tb1 %>% unnest_wider('article')
+library("XML")
+library("xml2")
+library("RCurl")
 
 
-# this line still having error
-df_driver = df_data %>% unnest(cols = names(.)) %>% unnest(cols = names(.)) %>% readr::type_convert()
+file_list <- list.files()
+articles_table <- data.frame(matrix(ncol = 4, nrow = 0))
+
+for (article in file_list) {
+  # read an article
+  article <- read_xml(article)
+  
+  
+  title <- xml_text(xml_find_all(article, xpath = "//title-group"))
+  abstract <- xml_text(xml_find_all(article, xpath = "//abstract"))
+  body <- xml_text(xml_find_all(article, xpath = "//body"))
+  category <- xml_text(xml_find_all(article, xpath = "//article-categories"))
+  
+  clean <- function(x){
+    
+    x <-tolower(x)
+    
+    x <-removeWords(x,stopwords('en'))
+    
+    x <-removePunctuation(x)
+    
+    x <-removeNumbers(x)
+    
+    x <-stripWhitespace(x)
+    
+    x <-stemDocument(x)
+    
+    return(x) }
+  
+  
+  title <- clean(title)
+  abstract <- clean(abstract)
+  body <- clean(body)
+  category <- clean(category)
+  
+  temp_abs <- ""
+  if (length(abstract) > 1){
+    for (text in abstract){
+      temp_abs <- paste(temp_abs,text)
+    }
+  }
+  abstract <- temp_abs
+
+  articles_table <- rbind(articles_table, c(title,abstract,body,category))
+
+
+}
+
+colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
+
+
 
 
