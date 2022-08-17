@@ -66,6 +66,18 @@ myCorpus <- Corpus(VectorSource(articles_table$Abstract))
 tdm_abstract <- TermDocumentMatrix(myCorpus)
 tdm_abstract = as.data.frame(as.matrix(tdm_abstract))
 #Transpose
-tdm = t(tdm_abstract)
+tdm_abstract = t(tdm_abstract)
+#Convert to data frame
+tdm_abstract = as.data.frame(tdm_abstract)
+
+#Use vector space before corpus
+myCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
+#Create term document matrix
+tdm_paragraphs <- TermDocumentMatrix(myCorpus)
+tdm_paragraphs = as.data.frame(as.matrix(tdm_paragraphs))
+#Transpose
+tdm_paragraphs = t(tdm_paragraphs)
+#Convert to data frame
+tdm_paragraphs = as.data.frame(tdm_paragraphs)
 
 
