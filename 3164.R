@@ -59,25 +59,30 @@ for (article in file_list) {
 colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
 
 #################################Create term document matrix########################################################
-library(tm)
-#Use vector space before corpus
+#Abstract TDM
 myCorpus <- Corpus(VectorSource(articles_table$Abstract))
-#Create term document matrix
+
 tdm_abstract <- TermDocumentMatrix(myCorpus)
+
 tdm_abstract = as.data.frame(as.matrix(tdm_abstract))
-#Transpose
+
 tdm_abstract = t(tdm_abstract)
-#Convert to data frame
-tdm_abstract = as.data.frame(tdm_abstract)
 
-#Use vector space before corpus
-myCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
-#Create term document matrix
-tdm_paragraphs <- TermDocumentMatrix(myCorpus)
-tdm_paragraphs = as.data.frame(as.matrix(tdm_paragraphs))
-#Transpose
-tdm_paragraphs = t(tdm_paragraphs)
-#Convert to data frame
-tdm_paragraphs = as.data.frame(tdm_paragraphs)
+tdm_abstract = as.data.frame(tdm_abstract, stringsAsFactors = FALSE)
 
+tdm_abstract <- tdm_abstract[1,]
+
+
+#Paragraph TDM
+paraCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
+
+tdm_paragraph <- TermDocumentMatrix(paraCorpus)
+
+tdm_paragraph <- removeSparseTerms(tdm_paragraph, 0.7)
+
+tdm_paragraph = as.data.frame(as.matrix(tdm_paragraph))
+
+tdm_paragraph = t(tdm_paragraph)
+
+tdm_paragraph = as.data.frame(tdm_paragraph, stringsAsFactors = FALSE)
 
