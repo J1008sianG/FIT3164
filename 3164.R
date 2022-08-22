@@ -13,7 +13,7 @@ articles_table <- data.frame(matrix(ncol = 4, nrow = 0))
 
 for (article in file_list) {
   # read an article
-  article <- read_xml(article)
+  article <- read_xml(article,'UTF_8')
   
   
   title <- xml_text(xml_find_all(article, xpath = "//title-group"))
@@ -23,13 +23,13 @@ for (article in file_list) {
   
   clean <- function(x){
     
-    x <-tolower(x)
-    
-    x <-removeWords(x,stopwords('en'))
+    x <-removeNumbers(x)
     
     x <-removePunctuation(x)
     
-    x <-removeNumbers(x)
+    x <-tolower(x)
+    
+    x <-removeWords(x,stopwords('en'))
     
     x <-stripWhitespace(x)
     
@@ -58,7 +58,9 @@ for (article in file_list) {
 
 colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
 
+
 #################################Create term document matrix########################################################
+library(tm)
 #Abstract TDM
 myCorpus <- Corpus(VectorSource(articles_table$Abstract))
 
@@ -69,8 +71,6 @@ tdm_abstract = as.data.frame(as.matrix(tdm_abstract))
 tdm_abstract = t(tdm_abstract)
 
 tdm_abstract = as.data.frame(tdm_abstract, stringsAsFactors = FALSE)
-
-tdm_abstract <- tdm_abstract[1,]
 
 
 #Paragraph TDM
@@ -85,4 +85,43 @@ tdm_paragraph = as.data.frame(as.matrix(tdm_paragraph))
 tdm_paragraph = t(tdm_paragraph)
 
 tdm_paragraph = as.data.frame(tdm_paragraph, stringsAsFactors = FALSE)
+
+count1 = 0 
+count2 = 0
+
+articles_table$indability <- NA
+
+for (i in 1:50){
+  word_list = as.list(scan(text=articles_table$Title[i], what="[[:space:]]"))
+  for ( words in word_list) {
+    if ( ! is.null(tdm_abstract[i,words]) ){
+      if (tdm_abstract[i,words] > 0 ){
+        count1 = count1 + tdm_abstract[i,words]
+        #density1 = 
+        
+      }
+    }
+    if ( ! is.null(tdm_paragraph[i,words]) ){
+      if (tdm_paragraph[i,words] > 0 ){
+        count2 = count2 + tdm_paragraph[i,words]
+        #density2 =
+      }
+    }
+  }
+  print(i)
+  print(count1)
+  print(count2)
+  print(count1+count2)
+  #new column density save the density1+2
+  if(count1+count2 > 400){
+    articles_table$findability[i] = 1
+  }
+  else{
+    articles_table$findability[i] = 0
+  }
+  count1 = 0 
+  count2 = 0
+}
+#median for density column
+#lop thru df agn then if smaller than median, 0 else 1
 
