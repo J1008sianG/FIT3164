@@ -23,13 +23,13 @@ for (article in file_list) {
   
   clean <- function(x){
     
-    x <-tolower(x)
-    
-    x <-removeWords(x,stopwords('en'))
+    x <-removeNumbers(x)
     
     x <-removePunctuation(x)
     
-    x <-removeNumbers(x)
+    x <-tolower(x)
+    
+    x <-removeWords(x,stopwords('en'))
     
     x <-stripWhitespace(x)
     
@@ -57,32 +57,62 @@ for (article in file_list) {
 }
 
 colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
+write.csv(articles_table,"articles_table.csv",row.names = FALSE)
+
 
 #################################Create term document matrix########################################################
-#Abstract TDM
+library(tm)
+#Use vector space before corpus
 myCorpus <- Corpus(VectorSource(articles_table$Abstract))
-
+#Create term document matrix
 tdm_abstract <- TermDocumentMatrix(myCorpus)
-
 tdm_abstract = as.data.frame(as.matrix(tdm_abstract))
-
+#Transpose
 tdm_abstract = t(tdm_abstract)
+#Convert to data frame
+tdm_abstract = as.data.frame(tdm_abstract)
 
-tdm_abstract = as.data.frame(tdm_abstract, stringsAsFactors = FALSE)
+#Use vector space before corpus
+myCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
+#Create term document matrix
+tdm_paragraphs <- TermDocumentMatrix(myCorpus)
+tdm_paragraphs = as.data.frame(as.matrix(tdm_paragraphs))
+#Transpose
+tdm_paragraphs = t(tdm_paragraphs)
+#Convert to data frame
+tdm_paragraphs = as.data.frame(tdm_paragraphs)
 
-tdm_abstract <- tdm_abstract[1,]
+count1 = 0 
+count2 = 0
 
+articles_table$findability <- NA
 
-#Paragraph TDM
-paraCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
+for (i in 1:10){
+  word_list = as.list(scan(text=articles_table$Title[i], what="[[:space:]]"))
+  for ( words in word_list) {
+    if ( ! is.null(tdm_abstract[i,words]) ){
+      if (tdm_abstract[i,words] > 0 ){
+        count1 = count1 + tdm_abstract[i,words]
+      }
+    }
+    if ( ! is.null(tdm_paragraphs[i,words]) ){
+      if (tdm_paragraphs[i,words] > 0 ){
+        count2 = count2 + tdm_paragraphs[i,words]
+      }
+    }
+  }
+  print(i)
+  print(count1)
+  print(count2)
+  print(count1+count2)
+  if(count1+count2 > 400){
+    articles_table$findability[i] = 1
+  }
+  else{
+    articles_table$findability[i] = 0
+  }
+  count1 = 0 
+  count2 = 0
+}
 
-tdm_paragraph <- TermDocumentMatrix(paraCorpus)
-
-tdm_paragraph <- removeSparseTerms(tdm_paragraph, 0.7)
-
-tdm_paragraph = as.data.frame(as.matrix(tdm_paragraph))
-
-tdm_paragraph = t(tdm_paragraph)
-
-tdm_paragraph = as.data.frame(tdm_paragraph, stringsAsFactors = FALSE)
 
