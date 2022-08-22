@@ -59,7 +59,6 @@ for (article in file_list) {
 colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
 
 #################################Create term document matrix########################################################
-library(tm)
 #Use vector space before corpus
 myCorpus <- Corpus(VectorSource(articles_table$Abstract))
 #Create term document matrix
@@ -71,13 +70,15 @@ tdm_abstract = t(tdm_abstract)
 tdm_abstract = as.data.frame(tdm_abstract)
 
 #Use vector space before corpus
-myCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
+paraCorpus <- Corpus(VectorSource(articles_table$Paragraphs))
 #Create term document matrix
-tdm_paragraphs <- TermDocumentMatrix(myCorpus)
+tdm_paragraphs <- TermDocumentMatrix(paraCorpus)
+
+tdm_paragraphs <- removeSparseTerms(tdm_paragraphs, 0.7)
+
 tdm_paragraphs = as.data.frame(as.matrix(tdm_paragraphs))
 #Transpose
 tdm_paragraphs = t(tdm_paragraphs)
 #Convert to data frame
 tdm_paragraphs = as.data.frame(tdm_paragraphs)
-
 
