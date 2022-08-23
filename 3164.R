@@ -154,3 +154,5 @@ for (i in 1:length(articles_table$Title)){
   }
 }
 
+#Replace NaN with 0 in articles_table
+articles_table[is.na(articles_table)] <- 0
