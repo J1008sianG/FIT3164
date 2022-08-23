@@ -60,7 +60,7 @@ colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
 
 
 #################################Create term document matrix########################################################
-library(tm)
+
 #Abstract TDM
 myCorpus <- Corpus(VectorSource(articles_table$Abstract))
 
@@ -86,42 +86,71 @@ tdm_paragraph = t(tdm_paragraph)
 
 tdm_paragraph = as.data.frame(tdm_paragraph, stringsAsFactors = FALSE)
 
-count1 = 0 
-count2 = 0
 
-articles_table$indability <- NA
+articles_table$abstractTotal <- rowSums(as.matrix(tdm_abstract))
+articles_table$paragraphTotal <- rowSums(as.matrix(tdm_paragraph))
+articles_table$abstractDensity <- NA
+articles_table$paragraphDensity <- NA
 
-for (i in 1:50){
+abstractCount = 0 
+paragraphCount = 0
+
+for (i in 1:length(articles_table$Title)){
   word_list = as.list(scan(text=articles_table$Title[i], what="[[:space:]]"))
   for ( words in word_list) {
     if ( ! is.null(tdm_abstract[i,words]) ){
       if (tdm_abstract[i,words] > 0 ){
-        count1 = count1 + tdm_abstract[i,words]
-        #density1 = 
-        
+        abstractCount = abstractCount + tdm_abstract[i,words]
+        absDensity = abstractCount / articles_table$abstractTotal[i]
+        articles_table$abstractDensity[i] = absDensity
       }
     }
     if ( ! is.null(tdm_paragraph[i,words]) ){
       if (tdm_paragraph[i,words] > 0 ){
-        count2 = count2 + tdm_paragraph[i,words]
-        #density2 =
+        paragraphCount = paragraphCount + tdm_paragraph[i,words]
+        pDensity = paragraphCount / articles_table$paragraphTotal[i]
+        articles_table$paragraphDensity[i] = pDensity
       }
     }
   }
-  print(i)
-  print(count1)
-  print(count2)
-  print(count1+count2)
-  #new column density save the density1+2
-  if(count1+count2 > 400){
-    articles_table$findability[i] = 1
-  }
-  else{
-    articles_table$findability[i] = 0
-  }
-  count1 = 0 
-  count2 = 0
+  abstractCount = 0 
+  paragraphCount = 0
 }
 #median for density column
 #lop thru df agn then if smaller than median, 0 else 1
+medianWithoutNA<-function(x) {
+  median(x[which(!is.na(x))])
+}
+
+medians = apply(articles_table[,7:8], 2, medianWithoutNA)
+
+abs_medianDensity = medians[1]
+p_medianDensity = medians[2]
+
+articles_table$Findability <- NA
+
+for (i in 1:length(articles_table$Title)){
+  if(is.na(articles_table$paragraphDensity[i])){
+    articles_table$Findability[i] = 0
+  }
+  else {
+    if(is.na(articles_table$abstractDensity[i])){
+      if(articles_table$paragraphDensity[i] >= p_medianDensity){
+        articles_table$Findability[i] = 1
+      }
+      else{
+        articles_table$Findability[i] = 0
+      }
+    }
+    else{
+      
+      if(articles_table$abstractDensity[i] >= abs_medianDensity && articles_table$paragraphDensity[i] >= p_medianDensity){
+        articles_table$Findability[i] = 1
+      }
+      else{
+        articles_table$Findability[i] = 0
+      }
+    }
+  }
+}
 
