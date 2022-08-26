@@ -156,3 +156,8 @@ for (i in 1:length(articles_table$Title)){
 
 #Replace NaN with 0 in articles_table
 articles_table[is.na(articles_table)] <- 0
+
+#split data
+train.row <- sample(1:nrow(articles_table), 0.7*nrow(articles_table))
+train_data <- articles_table[train.row,]
+test_data <- articles_table[-train.row,]
