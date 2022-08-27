@@ -6,6 +6,14 @@ library("dplyr")
 library("XML")
 library("xml2")
 library("RCurl")
+library("e1071")
+library("randomForest")
+library("tree")
+library("adabag")
+library("caret")
+library("plyr")
+library(knn)
+
 
 
 file_list <- list.files()
@@ -50,10 +58,10 @@ for (article in file_list) {
     }
   }
   abstract <- temp_abs
-
+  
   articles_table <- rbind(articles_table, c(title,abstract,body,category))
-
-
+  
+  
 }
 
 colnames(articles_table) = c("Title","Abstract","Paragraphs","Category")
@@ -161,3 +169,19 @@ articles_table[is.na(articles_table)] <- 0
 train.row <- sample(1:nrow(articles_table), 0.7*nrow(articles_table))
 train_data <- articles_table[train.row,]
 test_data <- articles_table[-train.row,]
+
+#########################Modelling#####################
+
+#Naive Bayes 
+naive.fit <- naiveBayes(Findability ~., train_data)
+naive.pred <- predict(naive.fit, test_data)
+naive.cfm <- table("actual" = test_data$Findability, "predicted" = naive.pred)
+naive.acc <- round(mean(naive.pred == test_data$Findability)*100, digits=2)
+cat("Naïve Bayes model accuracy is: ", naive.acc, "%") #92.05%
+
+#Random Forest 
+rf.fit <- randomForest(Findability ~., train_data)
+rf.pred <- predict(rf.fit, test_data)
+rf.cfm <- table("actual" = test_data$Findability, "predicted" = rf.pred)
+rf.acc <- round(mean(rf.pred == test_data$Findability)*100, digits = 2)
+cat("Random Forest ensemble model accuracy is: ", rf.acc , "%") #100%
