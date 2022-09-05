@@ -166,6 +166,7 @@ for (i in 1:length(articles_table$Title)){
 #Replace NaN with 0 in articles_table
 articles_table[is.na(articles_table)] <- 0
 
+
 #split data
 train.row <- sample(1:nrow(articles_table), 0.7*nrow(articles_table))
 train_data <- articles_table[train.row,]
@@ -176,47 +177,39 @@ test_data <- articles_table[-train.row,]
 train_data$Findability <- as.factor(train_data$Findability)
 test_data$Findability <- as.factor(test_data$Findability)
 
-
 #Naive Bayes
-naive.fit <- naiveBayes(Findability ~., train_data)
+naive.fit <- naiveBayes(Findability ~ Abstract+Paragraphs+Category, train_data)
 naive.pred <- predict(naive.fit, test_data)
 naive.cfm <- table("actual" = test_data$Findability, "predicted" = naive.pred)
 naive.acc <- round(mean(naive.pred == test_data$Findability)*100, digits=2)
-cat("Naïve Bayes model accuracy is: ", naive.acc, "%") #90.91%
+cat("NaÃ¯ve Bayes model accuracy is: ", naive.acc, "%") 
 
 #Random Forest 
-rf.fit <- randomForest(Findability ~Title+Abstract+Paragraphs+Category, train_data)
+rf.fit <- randomForest(Findability ~ Abstract+Paragraphs+Category, train_data)
 rf.pred <- predict(rf.fit, test_data)
 rf.cfm <- table("actual" = test_data$Findability, "predicted" = rf.pred)
 rf.acc <- round(mean(rf.pred == test_data$Findability)*100, digits = 2)
-cat("Random Forest ensemble model accuracy is: ", rf.acc , "%") #95.45%
+cat("Random Forest ensemble model accuracy is: ", rf.acc , "%") 
 
 #Decision Tree 
-tree.fit <- tree(Findability ~., data = train_data, method = "class")
-tree.pred <- predict(tree.fit, test_data, type="class")
+tree.fit <- suppressWarnings(tree(Findability ~ Abstract+Paragraphs+Category, data = train_data, method = "class"))
+tree.pred <- suppressWarnings(predict(tree.fit, test_data, type="class"))
 tree.cfm <- table("actual" = test_data$Findability, "predicted" = tree.pred)
 tree.acc <- round(mean(tree.pred == test_data$Findability)*100, digits = 2)
-cat("Decision tree accuracy is: ", tree.acc, "%") #97.73%
+cat("Decision tree accuracy is: ", tree.acc, "%") 
 
 #SVM 
-svm.fit <- svm(Findability ~ abstractTotal+paragraphTotal+abstractDensity+paragraphDensity, train_data,  type = 'C-classification')
+svm.fit <- svm(Findability ~ Abstract+Paragraphs+Category, train_data,  type = 'C-classification', kernel="linear")
 svm.predict <- predict(svm.fit, test_data)
 svm.cfm <- table("actual" = test_data$Findability, "predicted" = svm.predict)
 svm.acc <- round(mean(svm.predict == test_data$Findability)*100, digits = 2)
 cat("Support Vector Machine accuracy is: ", svm.acc, "%") 
 
-#Logistic Regression (HAVE SOME ERROR)
-logistic_model <- glm(Findability ~ abstractTotal+paragraphTotal+abstractDensity+paragraphDensity, train_data, family = "binomial")
-logistic_pred <- predict(logistic_model, test_data, type = "response")
-log.cfm <- table("actual" = test_data$Findability, "predicted" = logistic_pred)
-log.acc <- round(mean(logistic_pred == test_data$Findability)*100, digits = 2)
-cat("Logistic Regression accuracy is: ", log.acc, "%") 
-
 
 #Neural Network 
 nn_train <- train_data
 nn_test <- test_data
-nn.fit <- neuralnet(Findability ~ abstractTotal+paragraphTotal+abstractDensity+paragraphDensity, nn_train,hidden=3,act.fct = "logistic", linear.output = FALSE )
+nn.fit <- neuralnet(Findability ~  Abstract+Paragraphs+Category, nn_train,hidden=3,act.fct = "logistic", linear.output = FALSE )
 plot(nn.fit)
 nn.pred <- compute(nn.fit, nn_test)
 nn.pred <- as.data.frame(round(nn.pred$net.result,0))
@@ -226,3 +219,4 @@ nn.acc.1 <- sum(nn.cfm.1[1], nn.cfm.1[4]) / sum(nn.cfm.1[1:4])
 nn.acc.2 <- sum(nn.cfm.2[1], nn.cfm.2[4]) / sum(nn.cfm.2[1:4])
 nn.acc <- (sum(nn.acc.1,nn.acc.2)/2)*100
 cat("Neural Network accuracy is: ", nn.acc, "%") 
+
