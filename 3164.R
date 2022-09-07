@@ -267,7 +267,7 @@ for (i in 1:length(input_title)){
     }
   }
   input_df[i, 2] = abstract_count
-  input_df[i, 5] = abstract_count / category_total
+  input_df[i, 5] = abstract_count / abstract_total
   
   #Paragraph
   paragraph_count = 0
