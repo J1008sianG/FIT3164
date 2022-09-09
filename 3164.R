@@ -220,79 +220,52 @@ nn.acc.2 <- sum(nn.cfm.2[1], nn.cfm.2[4]) / sum(nn.cfm.2[1:4])
 nn.acc <- (sum(nn.acc.1,nn.acc.2)/2)*100
 cat("Neural Network accuracy is: ", nn.acc, "%") 
 
+###########################################################################################################################
 
-#####Visualization#####
-user_input_article = as.data.frame(test_data[2,])
-input_pred <- predict(naive.fit, user_input_article)
+#AUC value of original random forest 
+rf.conf = predict(rf.fit, test_data, type = "prob")
+rf.conf.pred = prediction(rf.conf[,2], test_data$Findability)
+rf.auc = performance(rf.conf.pred, "auc")
+original_auc_val = as.numeric(rf.auc@y.values)
 
-#Output if predicted correctly or wrongly
-if(input_pred == user_input_article$Findability){   
-  print(paste("It has predicted Correctly, Findability = ", as.numeric(input_pred)))
-}else{
-  print(paste("It has predicted Wrongly, Findability = ", as.numeric(input_pred)))
-}
 
-#Create list for each placement
-input_title = (scan(text=user_input_article$Title, what="[[:space:]]"))
-input_abstract = as.list(scan(text=user_input_article$Abstract, what="[[:space:]]"))
-input_paragraph = as.list(scan(text=user_input_article$Paragraph, what="[[:space:]]"))
-input_category = as.list(scan(text=user_input_article$Category, what="[[:space:]]"))
+#Find the original number of trees used 
+rf.fit$ntree #500 
 
-#Create new data frame to store Title words statistics
-input_df = as.data.frame((scan(text=user_input_article$Title, what="[[:space:]]")))
-names(input_df)[1] <- 'Title'
-input_df["Abstract"] = 0
-input_df["Paragraph"] = 0
-input_df["Category"] = 0
-input_df["Abstract_density"] = 0
-input_df["Paragraph_density"] = 0
-input_df["Category_density"] = 0
-input_df
+#save training and testing data in new variable
+imp.train = train_data
+imp.test = test_data
 
-#Length for each placement
-abstract_total = length(input_abstract)
-paragraph_total = length(input_paragraph)
-category_total = length(input_category)
 
-#Calculate 
-for (i in 1:length(input_title)){
+
+#Algorithm to fit the number of trees from 501 to 700 by tuning different mtry value
+
+for(ntrees in 500:700){
+  set.seed(9999)
+  new_rf.fit <- randomForest(Findability ~ Abstract+Paragraphs+Category, data=imp.train,importance=TRUE, ntree=ntrees, mtry=2)
+  new_rf.pred = predict(new_rf.fit, imp.test)
+  new_rf.cfm = table(actual = imp.test$Findability, predicted = new_rf.pred)
   
-  #Abstract
-  abstract_count = 0
-  if (length(input_abstract) > 0){
-    for (j in 1:length(input_abstract)){
-      if (input_title[i] == input_abstract[j]){
-        abstract_count = abstract_count + 1
-      }
-    }
-  }
-  input_df[i, 2] = abstract_count
-  input_df[i, 5] = abstract_count / abstract_total
+  new_rf.acc = round(mean(new_rf.pred == imp.test$Findability)*100, digits = 2)
   
-  #Paragraph
-  paragraph_count = 0
-  if (length(input_paragraph) > 0){
-    for (j in 1:length(input_paragraph)){
-      if (input_title[i] == input_paragraph[j]){
-        paragraph_count = paragraph_count + 1
-      }
-    }
-  }
-  input_df[i, 3] = paragraph_count
-  input_df[i, 6] = paragraph_count / paragraph_total
+  #calculate confidence and AUC of the new Random Forest model 
+  new_rf.conf = predict(new_rf.fit, imp.test, type = "prob")
+  new_rf.conf.pred = prediction(new_rf.conf[,2], df_target$Findability)
+  new_rf.auc = performance(new_rf.conf.pred, "auc")
+  new_rf.auc = as.numeric(new_rf.auc@y.values)
   
-  #Category
-  category_count = 0
-  if (length(input_category) > 0){
-    for (j in 1:length(input_category)){
-      if (input_title[i] == input_category[j]){
-        category_count = category_count + 1
-      }
-    }
-  }
-  input_df[i, 4] = category_count
-  input_df[i, 7] = category_count / category_total
+  cat("Best Tree is: ", new_rf.fit$ntree, "accuracy is: ", new_rf.acc , 
+      "AUC value: ", new_rf.auc ,"\n")
+  
+  
   
 }
 
-input_df
+
+
+
+
+
+
+
+
