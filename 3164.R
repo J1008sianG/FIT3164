@@ -14,6 +14,7 @@ library("caret")
 library("plyr")
 library(caTools)
 library(neuralnet)
+library(ROCR)
 
 
 
@@ -189,7 +190,7 @@ rf.fit <- randomForest(Findability ~ Abstract+Paragraphs+Category, train_data)
 rf.pred <- predict(rf.fit, test_data)
 rf.cfm <- table("actual" = test_data$Findability, "predicted" = rf.pred)
 rf.acc <- round(mean(rf.pred == test_data$Findability)*100, digits = 2)
-cat("Random Forest ensemble model accuracy is: ", rf.acc , "%") 
+cat("Random Forest model accuracy is: ", rf.acc , "%") 
 
 #Decision Tree 
 tree.fit <- suppressWarnings(tree(Findability ~ Abstract+Paragraphs+Category, data = train_data, method = "class"))
@@ -220,46 +221,52 @@ nn.acc.2 <- sum(nn.cfm.2[1], nn.cfm.2[4]) / sum(nn.cfm.2[1:4])
 nn.acc <- (sum(nn.acc.1,nn.acc.2)/2)*100
 cat("Neural Network accuracy is: ", nn.acc, "%") 
 
-###########################################################################################################################
+###################################Random Forest evaluation####################################
 
-#AUC value of original random forest 
+#Calculate confidence and construct ROC curve  
 rf.conf = predict(rf.fit, test_data, type = "prob")
 rf.conf.pred = prediction(rf.conf[,2], test_data$Findability)
+rf.perf = performance(rf.conf.pred, "tpr", "fpr")
+plot(rf.perf, col = "red")
+abline(a=0, b=1, col = "blue")
+
+#Calculate AUC value for random forest #0.48
 rf.auc = performance(rf.conf.pred, "auc")
-original_auc_val = as.numeric(rf.auc@y.values)
+rf.auc = round(rf.auc@y.values[[1]],2)
+cat("Area Under the Curve (AUC) of Random Forest is:", rf.auc)
+
+
+#Calculate RMSE for original random forest #0.55
+rf.rmse = round(sqrt(mean((as.numeric(rf.pred) - as.numeric(test_data$Findability))^2)),2)
 
 
 #Find the original number of trees used 
 rf.fit$ntree #500 
 
-#save training and testing data in new variable
-imp.train = train_data
-imp.test = test_data
+#Parameter tuning for num of trees
+tree_num = c(550, 600, 650, 700, 750, 800, 850, 900, 950, 1000)
+best_acc = rf.acc
+best_pred = rf.pred
+best_fit = rf.fit 
 
-
-
-#Algorithm to fit the number of trees from 501 to 700 by tuning different mtry value
-
-for(ntrees in 500:700){
-  set.seed(9999)
-  new_rf.fit <- randomForest(Findability ~ Abstract+Paragraphs+Category, data=imp.train,importance=TRUE, ntree=ntrees, mtry=2)
-  new_rf.pred = predict(new_rf.fit, imp.test)
-  new_rf.cfm = table(actual = imp.test$Findability, predicted = new_rf.pred)
+for(i in 501:1000){
+  set.seed(999)
+  rf.fit.new = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = i)
+  rf.pred.new = predict(rf.fit.new, test_data)
+  rf.new.acc = round(mean(rf.pred.new == test_data$Findability)*100, digits = 2)
   
-  new_rf.acc = round(mean(new_rf.pred == imp.test$Findability)*100, digits = 2)
-  
-  #calculate confidence and AUC of the new Random Forest model 
-  new_rf.conf = predict(new_rf.fit, imp.test, type = "prob")
-  new_rf.conf.pred = prediction(new_rf.conf[,2], df_target$Findability)
-  new_rf.auc = performance(new_rf.conf.pred, "auc")
-  new_rf.auc = as.numeric(new_rf.auc@y.values)
-  
-  cat("Best Tree is: ", new_rf.fit$ntree, "accuracy is: ", new_rf.acc , 
-      "AUC value: ", new_rf.auc ,"\n")
-  
-  
+  if(rf.new.acc > best_acc){
+    best_acc = rf.new.acc
+    best_fit = rf.fit.new
+    
+    
+  }
   
 }
+
+cat("best number of tree is", best_fit$ntree, "with accuracy of", best_acc,"%")
+
+
 
 
 
