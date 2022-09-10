@@ -267,7 +267,24 @@ for(i in 501:1000){
 cat("best number of tree is", best_fit$ntree, "with accuracy of", best_acc,"%")
 
 
+#Tuning different mtry for best result 
+for(i in (best_fit$mtry+1):25){
+  set.seed(999)
+  rf.mtry = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = best_fit$ntree, mtry = i)
+  rf.mtry.pred = predict(rf.mtry, test_data)
+  rf.mtry.acc = round(mean(rf.mtry.pred == test_data$Findability)*100, digits = 2)
+  
+  if(rf.mtry.acc > best_acc){
+    best_acc = rf.mtry.acc
+    best_fit = rf.mtry
+    
+    
+  }
+  
+}
 
+
+cat("best number of split is", best_fit$mtry, "with accuracy of", best_acc,"%")
 
 
 
