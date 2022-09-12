@@ -16,7 +16,8 @@ library(caTools)
 library(neuralnet)
 library(ROCR)
 
-set.seed(1000)
+setwd("C:/Users/User/Desktop/FIT3164/coding/data/t_data_200")
+set.seed(2000)
 
 
 
@@ -137,8 +138,8 @@ medianWithoutNA<-function(x) {
 
 medians = apply(articles_table[,7:8], 2, medianWithoutNA)
 
-abs_medianDensity = medians[1]
-p_medianDensity = medians[2]
+abs_medianDensity = 0.15 #medians[1]
+p_medianDensity = 0.1 #medians[2]
 
 articles_table$Findability <- NA
 
@@ -271,7 +272,7 @@ for(i in tree_num){
 cat("best number of tree is", best_fit$ntree, "with accuracy of", best_acc,"%")
 
 #Tuning different mtry for best result 
-for(i in (best_fit$mtry+1):5){
+for(i in (best_fit$mtry+1):7){
   set.seed(999)
   rf.mtry = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = best_fit$ntree, mtry = i)
   rf.mtry.pred = predict(rf.mtry, test_data)
