@@ -254,7 +254,7 @@ best_pred = rf.pred
 best_fit = rf.fit 
 
 for(i in tree_num){
-  set.seed(999)
+  set.seed(501:1000)
   rf.fit.new = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = i)
   rf.pred.new = predict(rf.fit.new, test_data)
   rf.new.acc = round(mean(rf.pred.new == test_data$Findability)*100, digits = 2)
