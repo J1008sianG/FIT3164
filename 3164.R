@@ -16,6 +16,8 @@ library(caTools)
 library(neuralnet)
 library(ROCR)
 
+set.seed(1000)
+
 
 
 file_list <- list.files()
@@ -127,6 +129,7 @@ for (i in 1:length(articles_table$Title)){
   paragraphCount = 0
 }
 #median for density column
+#bottom 20% 
 #lop thru df agn then if smaller than median, 0 else 1
 medianWithoutNA<-function(x) {
   median(x[which(!is.na(x))])
@@ -238,18 +241,18 @@ cat("Area Under the Curve (AUC) of Random Forest is:", rf.auc)
 
 #Calculate RMSE for original random forest #0.55
 rf.rmse = round(sqrt(mean((as.numeric(rf.pred) - as.numeric(test_data$Findability))^2)),2)
-
+cat("RMSE value is:", rf.rmse)
 
 #Find the original number of trees used 
 rf.fit$ntree #500 
 
 #Parameter tuning for num of trees
-tree_num = c(550, 600, 650, 700, 750, 800, 850, 900, 950, 1000)
+tree_num = c(550, 600, 650, 500, 750, 800, 850, 900, 950, 1000)
 best_acc = rf.acc
 best_pred = rf.pred
 best_fit = rf.fit 
 
-for(i in 501:1000){
+for(i in tree_num){
   set.seed(999)
   rf.fit.new = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = i)
   rf.pred.new = predict(rf.fit.new, test_data)
@@ -258,6 +261,7 @@ for(i in 501:1000){
   if(rf.new.acc > best_acc){
     best_acc = rf.new.acc
     best_fit = rf.fit.new
+    best_pred = rf.pred.new
     
     
   }
@@ -266,9 +270,8 @@ for(i in 501:1000){
 
 cat("best number of tree is", best_fit$ntree, "with accuracy of", best_acc,"%")
 
-
 #Tuning different mtry for best result 
-for(i in (best_fit$mtry+1):25){
+for(i in (best_fit$mtry+1):5){
   set.seed(999)
   rf.mtry = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = best_fit$ntree, mtry = i)
   rf.mtry.pred = predict(rf.mtry, test_data)
@@ -277,19 +280,13 @@ for(i in (best_fit$mtry+1):25){
   if(rf.mtry.acc > best_acc){
     best_acc = rf.mtry.acc
     best_fit = rf.mtry
+    best_pred = rf.mtry.pred
     
-    
-  }
-  
+    }
 }
 
 
 cat("best number of split is", best_fit$mtry, "with accuracy of", best_acc,"%")
-
-
-
-
-
 
 
 
