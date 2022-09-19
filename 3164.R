@@ -16,7 +16,7 @@ library(caTools)
 library(neuralnet)
 library(ROCR)
 
-setwd("C:/Users/User/Desktop/FIT3164/coding/data/t_data_200")
+
 set.seed(10000)
 
 
@@ -253,8 +253,7 @@ best_acc = rf.acc
 best_pred = rf.pred
 best_fit = rf.fit 
 
-for(i in tree_num){
-  set.seed(501:1000)
+for(i in 501:1000){
   rf.fit.new = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = i)
   rf.pred.new = predict(rf.fit.new, test_data)
   rf.new.acc = round(mean(rf.pred.new == test_data$Findability)*100, digits = 2)
@@ -273,7 +272,6 @@ cat("best number of tree is", best_fit$ntree, "with accuracy of", best_acc,"%")
 
 #Tuning different mtry for best result 
 for(i in (best_fit$mtry+1):7){
-  set.seed(999)
   rf.mtry = randomForest(Findability ~  Abstract+Paragraphs+Category, data = train_data, importance = TRUE, ntree = best_fit$ntree, mtry = i)
   rf.mtry.pred = predict(rf.mtry, test_data)
   rf.mtry.acc = round(mean(rf.mtry.pred == test_data$Findability)*100, digits = 2)
