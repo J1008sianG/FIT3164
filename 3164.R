@@ -17,7 +17,7 @@ library(neuralnet)
 library(ROCR)
 
 setwd("C:/Users/User/Desktop/FIT3164/coding/data/t_data_200")
-set.seed(2000)
+set.seed(10000)
 
 
 
@@ -283,7 +283,7 @@ for(i in (best_fit$mtry+1):7){
     best_fit = rf.mtry
     best_pred = rf.mtry.pred
     
-    }
+  }
 }
 
 
