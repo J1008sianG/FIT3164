@@ -287,5 +287,129 @@ for(i in (best_fit$mtry+1):7){
 
 cat("best number of split is", best_fit$mtry, "with accuracy of", best_acc,"%")
 
+#####Visualization#####
+user_input_article = as.data.frame(test_data[1,])
+input_pred <- predict(naive.fit, user_input_article)
+
+#Output if predicted correctly or wrongly
+if(input_pred == user_input_article$Findability){   
+  print(paste("It has predicted Correctly, Findability = ", as.numeric(input_pred)))
+}else{
+  print(paste("It has predicted Wrongly, Findability = ", as.numeric(input_pred)))
+}
+
+#Create list for each placement
+input_title = (scan(text=user_input_article$Title, what="[[:space:]]"))
+input_abstract = as.list(scan(text=user_input_article$Abstract, what="[[:space:]]"))
+input_paragraph = as.list(scan(text=user_input_article$Paragraph, what="[[:space:]]"))
+input_category = as.list(scan(text=user_input_article$Category, what="[[:space:]]"))
+
+#Create new data frame to store Title words statistics
+input_df = as.data.frame((scan(text=user_input_article$Title, what="[[:space:]]")))
+names(input_df)[1] <- 'Title'
+input_df["Abstract"] = 0
+input_df["Paragraph"] = 0
+input_df["Category"] = 0
+# input_df["Abstract_density"] = 0
+# input_df["Paragraph_density"] = 0
+# input_df["Category_density"] = 0
+input_df
+
+#Length for each placement
+abstract_total = length(input_abstract)
+paragraph_total = length(input_paragraph)
+category_total = length(input_category)
+
+#Calculate 
+for (i in 1:length(input_title)){
+  
+  #Abstract
+  abstract_count = 0
+  if (length(input_abstract) > 0){
+    for (j in 1:length(input_abstract)){
+      if (input_title[i] == input_abstract[j]){
+        abstract_count = abstract_count + 1
+      }
+    }
+  }
+  input_df[i, 2] = abstract_count
+  #input_df[i, 5] = abstract_count / abstract_total
+  
+  #Paragraph
+  paragraph_count = 0
+  if (length(input_paragraph) > 0){
+    for (j in 1:length(input_paragraph)){
+      if (input_title[i] == input_paragraph[j]){
+        paragraph_count = paragraph_count + 1
+      }
+    }
+  }
+  input_df[i, 3] = paragraph_count
+  #input_df[i, 6] = paragraph_count / paragraph_total
+  
+  #Category
+  category_count = 0
+  if (length(input_category) > 0){
+    for (j in 1:length(input_category)){
+      if (input_title[i] == input_category[j]){
+        category_count = category_count + 1
+      }
+    }
+  }
+  input_df[i, 4] = category_count
+  #input_df[i, 7] = category_count / category_total
+  
+}
+
+input_df
+
+#Process data for plotting
+plotting = t(input_df)
+colnames(plotting) <- plotting[1,]
+plotting <- plotting[-1,] 
+plotting
+
+#####Stacked bar chart#####
+library(ggplot2)
+barplot(as.matrix(plotting), 
+        col = c("red", "green", "blue", "brown"),
+        main = "Word counts in each placements",
+        xlab = "Words",
+        ylab = "occurrence",
+        legend.text = rownames(plotting))
+
+#####Bar chart for each placements#####
+plot_abstract = t(plotting["Abstract",][order(plotting["Abstract",])])  #Filter placement, then sort by ascending
+#Pick the top 10 occurrence
+if (length(plot_abstract) > 10){
+  plot_abstract = t(plot_abstract[,(ncol(plot_abstract)-9):ncol(plot_abstract)])
+}
+barplot(as.matrix(plot_abstract),
+        col = "blue",
+        main = "Word counts in abstract",
+        xlab = "Words",
+        ylab = "occurrence")
+
+plot_paragraph = t(plotting["Paragraph",][order(plotting["Paragraph",])])
+if (length(plot_paragraph) > 10){
+  plot_paragraph = t(plot_paragraph[,(ncol(plot_paragraph)-9):ncol(plot_paragraph)])
+}
+barplot(as.matrix(plot_paragraph),
+        col = "red",
+        main = "Word counts in Paragraph",
+        xlab = "Words",
+        ylab = "occurrence")
+
+plot_category = t(plotting["Category",][order(plotting["Category",])])
+if (length(plot_category) > 10){
+  plot_category = t(plot_category[,(ncol(plot_category)-9):ncol(plot_category)])
+}
+barplot(as.matrix(plot_category),
+        col = "orange",
+        main = "Word counts in Category",
+        xlab = "Words",
+        ylab = "occurrence")
+
+
 
 
