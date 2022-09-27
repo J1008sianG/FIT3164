@@ -39,6 +39,8 @@ clean <- function(x){
   return(x) }
 
 
+
+
 ui <- fluidPage(
   
   titlePanel("Classification Model"),
@@ -49,22 +51,23 @@ ui <- fluidPage(
       width = 3,
       style = paste0("height: 90vh; overflow-y: auto;"),
       
-      fileInput("file1", "Upload XML File",
+      fileInput("file1", "Upload XML File ONLY",
                 multiple = FALSE,
                 accept = c(".xml")),
       
       selectInput("placement", "Placement:",
                   c("Paragraph", "Abstract")),
       
-      actionButton(inputId='ab1', label="Learn More", 
+      actionButton(inputId='ab1', label="Convert PDF to XML", 
                    icon = icon("th"), 
-                   onclick ="window.open('http://google.com', '_blank')"),
+                   onclick ="window.open('https://products.aspose.app/pdf/conversion/pdf-to-xml', '_blank')"),
       
       actionButton(inputId='ab2', label="Predict")
     ),
     mainPanel(
       
-      textOutput("text"),
+      span(strong(textOutput("text")),style= "font-family: 'Times', serif;
+    font-weight: 500; font-size: 50px;"),
       
       fluidRow(
         splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot1"),DT::dataTableOutput("table2"))
@@ -215,11 +218,13 @@ server <- function(input, output) {
   })
   
   classification_model <- eventReactive(input$ab2,{
-
+    
     input_table <- input_file()
     
     model <- readRDS("./final_model.rds")
     pred <- predict(model, input_table)
+    rf.cfm <- table("actual" = input_table$Findability, "predicted" = pred)
+    rf.acc <- round(mean(pred == input_table$Findability)*100, digits = 2)
     print(pred)
     if (pred[1] == 1){
       res = "The uploaded article has a great findability based on the Title"
@@ -231,6 +236,8 @@ server <- function(input, output) {
     res
   })
   
+  
+  
   density_plot <- eventReactive(input$ab2,{
     
     user_input_article = input_file()
@@ -239,15 +246,15 @@ server <- function(input, output) {
     input_title = (scan(text=user_input_article$Title, what="[[:space:]]"))
     input_abstract = as.list(scan(text=user_input_article$Abstract, what="[[:space:]]"))
     input_paragraph = as.list(scan(text=user_input_article$Paragraph, what="[[:space:]]"))
-
+    
     
     #Create new data frame to store Title words statistics
     input_df = as.data.frame((scan(text=user_input_article$Title, what="[[:space:]]")))
     names(input_df)[1] <- 'Title'
     input_df["Abstract"] = 0
     input_df["Paragraph"] = 0
-
-
+    
+    
     
     #Length for each placement
     abstract_total = length(input_abstract)
@@ -266,7 +273,7 @@ server <- function(input, output) {
         }
       }
       input_df[i, 2] = abstract_count
-
+      
       
       #Paragraph
       paragraph_count = 0
@@ -278,7 +285,7 @@ server <- function(input, output) {
         }
       }
       input_df[i, 3] = paragraph_count
-  
+      
       
     }
     
@@ -287,20 +294,20 @@ server <- function(input, output) {
     plotting = t(input_df)
     colnames(plotting) <- plotting[1,]
     plotting <- plotting[-1,] 
-
+    
     #####Bar chart for each placements#####
     if (input$placement == "Abstract"){
-    plot_abstract = t(plotting["Abstract",][order(plotting["Abstract",])])  #Filter placement, then sort by ascending
-    #Pick the top 10 occurrence
+      plot_abstract = t(plotting["Abstract",][order(plotting["Abstract",])])  #Filter placement, then sort by ascending
+      #Pick the top 10 occurrence
       if (length(plot_abstract) > 10){
         plot_abstract = t(plot_abstract[,(ncol(plot_abstract)-9):ncol(plot_abstract)])
       }
       plot = barplot(as.matrix(plot_abstract),
-              col = "blue",
-              main = "Word counts in abstract",
-              xlab = "Words",
-              ylab = "occurrence")
-     
+                     col = "blue",
+                     main = "Word counts in abstract",
+                     xlab = "Words",
+                     ylab = "Occurrence")
+      
     }
     else {
       plot_paragraph = t(plotting["Paragraph",][order(plotting["Paragraph",])])
@@ -308,14 +315,14 @@ server <- function(input, output) {
         plot_paragraph = t(plot_paragraph[,(ncol(plot_paragraph)-9):ncol(plot_paragraph)])
       }
       plot= barplot(as.matrix(plot_paragraph),
-              col = "red",
-              main = "Word counts in Paragraph",
-              xlab = "Words",
-              ylab = "occurrence")
+                    col = "lightblue",
+                    main = "Word counts in Paragraph",
+                    xlab = "Words",
+                    ylab = "Occurrence")
     }
     
     plot
-
+    
   })
   
   
@@ -365,7 +372,7 @@ server <- function(input, output) {
     output$text <- renderText({
       
       classification_model()
-
+      
     })
   })
   
