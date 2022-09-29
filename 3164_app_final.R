@@ -384,7 +384,10 @@ server <- function(input, output,session) {
                      col = "blue",
                      main = "Word counts of Title in abstract",
                      xlab = "Words",
-                     ylab = "Occurrence")
+                     ylab = "Occurrence",
+                     xaxt = "n")
+      plot
+      text(plot, par("usr")[3], labels = colnames(plot_abstract), srt = 55, adj = c(1,1), xpd = TRUE, cex=1.1)
       
     }
     else {
@@ -396,10 +399,12 @@ server <- function(input, output,session) {
                     col = "lightblue",
                     main = "Word counts of Title in Paragraph",
                     xlab = "Words",
-                    ylab = "Occurrence")
-    }
+                    ylab = "Occurrence",
+                    xaxt = "n")
+      plot
+      text(plot, par("usr")[3], labels = colnames(plot_paragraph), srt = 55, adj = c(1,1), xpd = TRUE, cex=1.1)
 
-    plot
+    }
     
   })
   
