@@ -63,7 +63,7 @@ ui <- navbarPage("MDS9",
       
       actionButton(inputId='ab1', label="Convert PDF to XML", 
                    icon = icon("th"), 
-                   onclick ="window.open('https://products.aspose.app/pdf/conversion/pdf-to-xml', '_blank')"),
+                   onclick ="window.open('https://typeset.io/for-publishers/convert/pdf-to-jats-xml/', '_blank')"),
       
       actionButton(inputId='ab2', label="Predict")
     ),
@@ -73,7 +73,8 @@ ui <- navbarPage("MDS9",
     font-weight: 500; font-size: 40px;"),
       
       fluidRow(
-        splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot1"),wordcloud2Output("plot2")
+        splitLayout(cellWidths = c("50%", "50%"), plotOutput("plot1"),
+                    wordcloud2Output("plot2")
       ),
       HTML('<hr style="color: purple;">'),
       dataTableOutput("table2"))
@@ -107,7 +108,7 @@ ui <- navbarPage("MDS9",
            
            br(),
            
-           h2(HTML(" - The current model has the accuracy of <b> 79.89%  </b>"), 
+           h2(HTML(" - The current model has the accuracy of <b> 79.89%  </b> which uses Random Forest Algorithm."), 
               style="text-align:left"),
            
            br(),
@@ -157,6 +158,10 @@ server <- function(input, output,session) {
       
       updateSelectInput(session, "placement", "Placement: (Abstract is empty) ", c("Paragraph"))
       
+    }
+    
+    else{
+      updateSelectInput(session, "placement", "Placement:",c("Paragraph", "Abstract"))
     }
     
     
@@ -382,10 +387,11 @@ server <- function(input, output,session) {
       }
       plot = barplot(as.matrix(plot_abstract),
                      col = "blue",
-                     main = "Word counts of Title in abstract",
+                     main = "Word counts of Title in abstract and Word Cloud from Abstract",
                      xlab = "Words",
                      ylab = "Occurrence",
                      xaxt = "n")
+      
       plot
       text(plot, par("usr")[3], labels = colnames(plot_abstract), srt = 55, adj = c(1,1), xpd = TRUE, cex=1.1)
       
@@ -397,14 +403,15 @@ server <- function(input, output,session) {
       }
       plot= barplot(as.matrix(plot_paragraph),
                     col = "lightblue",
-                    main = "Word counts of Title in Paragraph",
+                    main = "Word counts of Title in Paragraph and Word Cloud from Paragraph",
                     xlab = "Words",
                     ylab = "Occurrence",
                     xaxt = "n")
+      
       plot
       text(plot, par("usr")[3], labels = colnames(plot_paragraph), srt = 55, adj = c(1,1), xpd = TRUE, cex=1.1)
-
     }
+
     
   })
   
@@ -440,8 +447,9 @@ server <- function(input, output,session) {
     
     res = as.data.frame(findMostFreqTerms(tdm,50L))
     
-    res
+    res = datatable( res, caption = "Related Keywords from entire article" )
     
+    res
   })
   
   word_cloud <- eventReactive(input$ab2,{
