@@ -157,15 +157,12 @@ server <- function(input, output,session) {
     abstract <- xml_text(xml_find_all(input_article, xpath = "//abstract"))
     body <- xml_text(xml_find_all(input_article, xpath = "//body"))
     category <- xml_text(xml_find_all(input_article, xpath = "//article-categories"))
-    
-    print(title)
-    
+
     title <- clean(title)
     abstract <- clean(abstract)
     body <- clean(body)
     category <- clean(category)
-    
-    print(title)
+
     
     temp_abs <- ""
     if (length(abstract) > 1){
