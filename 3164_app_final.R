@@ -69,6 +69,16 @@ ui <- navbarPage("MDS9",
     ),
     mainPanel(
       
+      textOutput("warning"),
+      
+      tags$head(tags$style("#warning{color: red;
+                                 font-size: 20px;
+                                 font-style: italic;
+                                 }"
+      )
+      ),
+      
+      
       span(strong(textOutput("text")),style= "font-family: 'Times', serif;
     font-weight: 500; font-size: 40px;"),
       
@@ -134,6 +144,13 @@ server <- function(input, output,session) {
     input_table = data.frame(matrix(ncol = 4, nrow = 0))
     
     file <- input$file1$datapath
+    
+    ext <- tools::file_ext(file)
+    
+    req(file)
+    validate(need(ext == "xml", "Please upload a xml file"))
+    
+    
     input_article <- read_xml(file,'UTF_8')
     
     title <- xml_text(xml_find_all(input_article, xpath = "//title-group"))
@@ -141,10 +158,14 @@ server <- function(input, output,session) {
     body <- xml_text(xml_find_all(input_article, xpath = "//body"))
     category <- xml_text(xml_find_all(input_article, xpath = "//article-categories"))
     
+    print(title)
+    
     title <- clean(title)
     abstract <- clean(abstract)
     body <- clean(body)
     category <- clean(category)
+    
+    print(title)
     
     temp_abs <- ""
     if (length(abstract) > 1){
@@ -167,6 +188,20 @@ server <- function(input, output,session) {
     
   })
   
+  warning_msg <- eventReactive(input$file1, {
+    
+    input_table = data.frame(matrix(ncol = 4, nrow = 0))
+    
+    file <- input$file1$datapath
+    
+    ext <- tools::file_ext(file)
+    
+    req(file)
+    validate(need(ext == "xml", "Please upload a xml file"))
+    
+  
+    
+  })
   
   
   input_file <- eventReactive(input$ab2,{
@@ -531,6 +566,8 @@ server <- function(input, output,session) {
       related_keywords()
       
     })
+    
+    
   })
   
   observeEvent(input$ab2,{
@@ -559,6 +596,10 @@ server <- function(input, output,session) {
 
     })
   })
+  
+  output$warning <- renderText(
+    warning_msg()
+  )
   
 }
 
