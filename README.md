@@ -22,3 +22,7 @@
 <br>
 
 - Some limitations of the model include the uploaded article needs to be convert into xml type and some characters from the suggested keywords are be removed.
+
+<br>
+
+Sample dataset can be downloaded from https://drive.google.com/file/d/1tp6kS9h_ygmlgOKUH1SNCATEk7WfuIb0/view?usp=sharing 
